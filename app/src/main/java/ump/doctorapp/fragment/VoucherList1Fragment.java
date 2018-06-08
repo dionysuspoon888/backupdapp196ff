@@ -44,20 +44,20 @@ public class VoucherList1Fragment extends BaseFragment implements VoucherList1Ad
         Voucher1List = new ArrayList<>();
         //login gives value
 
-            Voucher1List.add(new Voucher1Data("B317336", "100.0"));
-            Voucher1List.add(new Voucher1Data("B317337", "72.0"));
-            Voucher1List.add(new Voucher1Data("B317338", "126.0"));
+            Voucher1List.add(new Voucher1Data("B317336", "0.0"));
+          //  Voucher1List.add(new Voucher1Data("B317337", "72.0"));
+           // Voucher1List.add(new Voucher1Data("B317338", "126.0"));
 
 
-        if(GlobalConstants.eSignatureTable != null) {
-            for (String key : GlobalConstants.eSignatureTable.keySet()) {
-                for(int i=0;i<Voucher1List.size();i++){
-                    if(Voucher1List.get(i).getVoucherNumber().equals(key)){
-                        Voucher1List.remove(i);
-                    }
-                }
-            }
-        }
+//        if(GlobalConstants.eSignatureTable != null) {
+//            for (String key : GlobalConstants.eSignatureTable.keySet()) {
+//                for(int i=0;i<Voucher1List.size();i++){
+//                    if(Voucher1List.get(i).getVoucherNumber().equals(key)){
+//                        Voucher1List.remove(i);
+//                    }
+//                }
+//            }
+//        }
 
 
 

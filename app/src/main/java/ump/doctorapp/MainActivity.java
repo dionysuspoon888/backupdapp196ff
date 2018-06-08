@@ -10,7 +10,7 @@ import ump.doctorapp.fragment.MainFragment;
  */
 
 public class MainActivity extends BaseActivity {
-//gkghhgj
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

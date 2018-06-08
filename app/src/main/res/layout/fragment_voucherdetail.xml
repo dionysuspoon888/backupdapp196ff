@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_weight="1"
+        android:scrollbars="vertical">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/topesignature" />
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/iv_evouchersign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/esignatureupdated"
+        />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_alignBottom="@+id/iv_evouchersign"
+    android:padding="8dp">
+    <com.github.gcacace.signaturepad.views.SignaturePad
+        android:id="@+id/patient_sign"
+        android:layout_weight="0.47"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:penMaxWidth="2dp"
+        app:penMinWidth="2dp"
+        app:velocityFilterWeight="0.9" />
+    <android.support.v4.widget.Space
+        android:layout_weight="0.06"
+        android:layout_width="0dp"
+        android:layout_height="50dp" />
+
+    <com.github.gcacace.signaturepad.views.SignaturePad
+        android:layout_weight="0.47"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:penMinWidth="2dp"
+        app:penMaxWidth="2dp"
+        app:velocityFilterWeight="0.9"
+        android:id="@+id/doctor_sign"
+
+        />
+</LinearLayout>
+</RelativeLayout>
+
+
+</LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>
