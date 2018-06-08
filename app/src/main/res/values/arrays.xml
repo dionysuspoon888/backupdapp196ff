@@ -1,0 +1,158 @@
+<resources>
+
+    <string-array name="db_table_name_array">
+        <item>App_Important_Info</item>
+        <item>App_Med_Sch_In_Services</item>
+        <item>App_Med_Sch_Ex_Services</item>
+        <item>App_Area</item>
+        <item>App_District</item>
+        <item>App_SP_Subject</item>
+        <item>App_Disclaimer</item>
+        <item>App_DoctorProfile</item>
+        <item>App_Ads_Banner</item>
+        <item>App_Logo</item>
+        <item>App_Checksum</item>
+    </string-array>
+    <string-array name="db_important_colum_array">
+        <item>_id</item>
+        <item>IS_DECLARATION</item>
+        <item>UI_LABEL_ENG</item>
+        <item>UI_LABEL_CHI</item>
+        <item>UI_CONTENT_ENG</item>
+        <item>UI_CONTENT_CHI</item>
+        <item>CONTENT_TYPE</item>
+        <item>SEQ_NO_ENG</item>
+        <item>SEQ_NO_CHI</item>
+        <item>ACTION_CODE</item>
+    </string-array>
+    <string-array name="db_inservice_colum_array">
+        <item>_id</item>
+        <item>UI_LABEL_ENG</item>
+        <item>UI_LABEL_CHI</item>
+        <item>SEQ_NO_ENG</item>
+        <item>SEQ_NO_CHI</item>
+        <item>ACTION_CODE</item>
+    </string-array>
+    <string-array name="db_exservice_colum_array">
+        <item>_id</item>
+        <item>UI_LABEL_ENG</item>
+        <item>UI_LABEL_CHI</item>
+        <item>SEQ_NO_ENG</item>
+        <item>SEQ_NO_CHI</item>
+        <item>ACTION_CODE</item>
+    </string-array>
+    <string-array name="db_area_colum_array">
+        <item>_id</item>
+        <item>SVC_ID</item>
+        <item>UI_LABEL_ENG</item>
+        <item>UI_LABEL_CHI</item>
+        <item>UI_TAB_ENG</item>
+        <item>UI_TAB_CHI</item>
+        <item>SEQ_NO_ENG</item>
+        <item>SEQ_NO_CHI</item>
+        <item>ACTION_CODE</item>
+    </string-array>
+    <string-array name="db_district_colum_array">
+        <item>_id</item>
+        <item>SVC_ID</item>
+        <item>AREA_ID</item>
+        <item>UI_LABEL_ENG</item>
+        <item>UI_LABEL_CHI</item>
+        <item>SEQ_NO_ENG</item>
+        <item>SEQ_NO_CHI</item>
+        <item>ACTION_CODE</item>
+    </string-array>
+    <string-array name="db_subject_colum_array">
+        <item>_id</item>
+        <item>SVC_ID</item>
+        <item>UI_LABEL_ENG</item>
+        <item>UI_LABEL_CHI</item>
+        <item>SEQ_NO_ENG</item>
+        <item>SEQ_NO_CHI</item>
+        <item>ACTION_CODE</item>
+    </string-array>
+    <string-array name="db_disclaimer_colum_array">
+        <item>_id</item>
+        <item>SVC_ID</item>
+        <item>UI_CONTENT_ENG</item>
+        <item>UI_CONTENT_CHI</item>
+        <item>ACTION_CODE</item>
+    </string-array>
+    <string-array name="db_doctor_colum_array">
+        <item>DR_CODE</item>
+        <item>SVC_ID</item>
+        <item>AREA_ID</item>
+        <item>DISTRICT_ID</item>
+        <item>SUBJECT_ID</item>
+        <item>DR_NAME_ENG</item>
+        <item>DR_ADDR_ENG</item>
+        <item>OPENHOUR1_ENG</item>
+        <item>OPENHOUR2_ENG</item>
+        <item>OPENHOUR3_ENG</item>
+        <item>OPENHOUR4_ENG</item>
+        <item>DR_NAME_CHI</item>
+        <item>DR_ADDR_CHI</item>
+        <item>OPENHOUR1_CHI</item>
+        <item>OPENHOUR2_CHI</item>
+        <item>OPENHOUR3_CHI</item>
+        <item>OPENHOUR4_CHI</item>
+        <item>IS_UMP_CTR</item>
+        <item>DR_TEL</item>
+        <item>AM_ADDR</item>
+        <item>GM_ADDR</item>
+        <item>APPS_DIAL_TEL</item>
+        <item>SEQ_NO_ENG</item>
+        <item>SEQ_NO_CHI</item>
+        <item>ACTION_CODE</item>
+    </string-array>
+    <string-array name="db_banner_colum_array">
+        <item>_id</item>
+        <item>IMG_LINK</item>
+        <item>TIME_INTERVAL</item>
+        <item>HYPER_LINK</item>
+        <item>SEQ_NO_ENG</item>
+        <item>SEQ_NO_CHI</item>
+        <item>ACTION_CODE</item>
+    </string-array>
+    <string-array name="db_logo_colum_array">
+        <item>_id</item>
+        <item>LOGO</item>
+        <item>ACTION_CODE</item>
+    </string-array>
+    <string-array name="db_checksum_colum_array">
+        <item>AC_CODE</item>
+        <item>AC_CODE2</item>
+        <item>NO_OF_RECORD</item>
+        <item>LAST_SYNC_DATE</item>
+        <item>EXCEPTION_MSG</item>
+        <item>NO_OF_MENU_BUTTON</item>
+        <item>AC_CHECKING_RESULT</item>
+        <item>AC_CHECKING_RESULT_MSG</item>
+        <item>NEED_TO_UPDATE</item>
+        <item>LOGIN_TIMEOUT</item>
+        <item>TITLE</item>
+        <item>TAB0</item>
+        <item>TAB1</item>
+        <item>TAB2</item>
+        <item>TITLE_TC</item>
+        <item>TAB0_TC</item>
+        <item>TAB1_TC</item>
+        <item>TAB2_TC</item>
+    </string-array>
+
+    <!--ESubmission-->
+    <string-array name="claim_type">
+        <item>General Consultation</item>
+        <item>Specialist Consultation</item>
+        <item>Chinese Medicine Consultation</item>
+        <item>Physiotherapy Treatment</item>
+        <item>Diagnostic Investigation</item>
+    </string-array>
+
+    <string-array name="currency">
+        <item>Hong Kong Dollar</item>
+        <item>Macau MOP</item>
+        <item>China RMB</item>
+        <item>Others</item>
+    </string-array>
+</resources>

@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="ump.doctorlist.fragment.esubmission.ClaimListFragment">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--This button little bigger thant the actual image size because the image cannot fit the whole button -->
+        <Button
+            android:id="@+id/sort_date_button"
+            android:layout_width="58dp"
+            android:layout_height="34dp"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
+            android:background="@drawable/claim_history_sort_date_asec_tc"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <ListView
+        android:layout_marginTop="@dimen/margin_small"
+        android:id="@+id/claim_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

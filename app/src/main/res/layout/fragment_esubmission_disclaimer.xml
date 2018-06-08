@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/disclaimer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/page_background"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/important_title_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_layout_height"
+        android:background="@drawable/discliamer_title">
+
+        <TextView
+            android:id="@+id/agreement_company_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:paddingEnd="0dp"
+            android:paddingLeft="13dp"
+            android:paddingRight="13dp"
+            android:paddingStart="13dp"
+            android:paddingTop="13dp"
+            android:text="@string/CTF"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/agreement_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingEnd="5dp"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp"
+        android:paddingStart="5dp"
+        android:paddingTop="5dp"
+        android:text="@string/declaration_title"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/agreement_statement_textview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="13dp"
+            android:paddingEnd="13dp"
+            android:paddingLeft="13dp"
+            android:paddingRight="13dp"
+            android:paddingStart="13dp"
+            android:paddingTop="13dp"
+            android:text="@string/disclaimer_statement"
+            android:textColor="@color/black" />
+    </ScrollView>
+
+    <include layout="@layout/divider_view" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_layout_height"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/agreement_agree_button"
+            style="@style/textview_white"
+            android:layout_width="@dimen/btn_width_small"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:background="@drawable/ump_normal_btn"
+            android:gravity="center"
+            android:text="@string/disclaimer_agree"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/agreement_disagree_button"
+            style="@style/textview_white"
+            android:layout_width="@dimen/btn_width_small"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:background="@drawable/ump_normal_btn"
+            android:gravity="center"
+            android:text="@string/disclaimer_disagree"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>

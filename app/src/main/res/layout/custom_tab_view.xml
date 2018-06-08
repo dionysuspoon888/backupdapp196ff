@@ -1,0 +1,16 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="@dimen/linear_layout_height"
+    android:layout_weight="1"
+    android:background="@drawable/main_tab_back_selector"
+    android:orientation="vertical" >
+    <!-- RadioButton -->
+
+    <ump.doctorlist.util.MyRadioButton
+        android:id="@+id/custom_area_tab_radio_text"
+        style="@style/textview_white_small"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_layout_height"
+        android:gravity="center" />
+
+</RelativeLayout>

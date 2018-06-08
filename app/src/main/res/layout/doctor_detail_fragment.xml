@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical" >
+
+	<ScrollView
+		android:id="@+id/doctor_info_scroll"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_below="@anim/banner_anim"
+		android:fadeScrollbars="true"
+		android:scrollbars="none" >
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@android:color/transparent"
+			android:orientation="vertical" >
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@android:color/transparent"
+				android:gravity="center"
+				android:orientation="horizontal"
+				android:padding="@dimen/padding_medium" >
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:background="@android:color/transparent"
+					android:gravity="center"
+					android:orientation="vertical">
+
+					<!-- textview_black_little_smaller -->
+
+					<TextView
+						android:id="@+id/doctor_info_name"
+						style="@style/textview_doctor"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:layout_weight="1" />
+
+					<TextView
+						android:id="@+id/doctor_info_title"
+						style="@style/textview_doctor_small"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:layout_weight="1" />
+
+					<!--
+                     <TextView
+                    android:id="@+id/doctor_info_doc_code"
+                    style="@style/textview_black_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingTop="@dimen/padding_small"
+                    android:textIsSelectable="true" />
+
+
+                    -->
+				</LinearLayout>
+
+				<LinearLayout
+					android:id="@+id/doctor_image_layout"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="2"
+					android:background="@android:color/transparent"
+					android:gravity="center"
+					android:visibility="visible">
+
+					<Space
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_weight="1" />
+
+					<Button
+						android:id="@+id/doctor_detail_share_btn"
+						android:layout_width="34dp"
+						android:layout_height="34dp"
+						android:layout_alignParentBottom="true"
+						android:layout_gravity="bottom"
+						android:layout_marginRight="10dp"
+						android:background="@drawable/share" />
+
+					<ImageView
+						android:id="@+id/doctor_image"
+						android:layout_width="70dp"
+						android:layout_height="@dimen/doctor_image_size_height"
+						android:paddingRight="@dimen/padding_small"
+						android:scaleType="fitXY" />
+				</LinearLayout>
+			</LinearLayout>
+
+			<include layout="@layout/divider_view" />
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical" >
+
+				<LinearLayout
+					android:id="@+id/doctor_detail_frag_address_layout"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:background="@android:color/transparent"
+					android:gravity="center"
+					android:orientation="horizontal"
+					android:padding="@dimen/padding_medium" >
+
+					<TextView
+						android:id="@+id/doctor_detail_frag_address"
+						style="@style/textview_doctor_small"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1" />
+
+					<Button
+						android:id="@+id/doctor_detail_frag_address_btn"
+						style="@style/textview_white_small"
+						android:layout_width="@dimen/doctor_details_btn_width"
+						android:layout_height="@dimen/doctor_details_btn_height"
+						android:layout_marginLeft="@dimen/margin_small"
+						android:layout_marginRight="@dimen/margin_small"
+						android:background="@drawable/doctor_details_btn"
+						android:paddingRight="@dimen/doctor_details_btn_padding"
+						android:text="@string/doctor_detail_frag_map_btn" />
+				</LinearLayout>
+
+				<View
+					android:id="@+id/doctor_detail_frag_workhour_divider"
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/divider_height"
+					android:background="@color/divider_blue" />
+
+				<LinearLayout
+					android:id="@+id/doctor_detail_frag_workhour_layout"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:background="@android:color/transparent"
+					android:gravity="center"
+					android:orientation="vertical"
+					android:padding="@dimen/padding_medium" >
+
+					<TextView
+						android:id="@+id/doctor_detail_frag_workhour_text"
+						style="@style/textview_doctor_small"
+						android:layout_width="match_parent"
+						android:layout_height="@dimen/textview_height"
+						android:text="@string/doctor_detail_frag_workhour_text" />
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:background="@android:color/transparent"
+						android:gravity="center_horizontal"
+						android:orientation="horizontal" >
+
+						<TextView
+							android:id="@+id/doctor_detail_frag_workhour1"
+							style="@style/textview_doctor_small"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_weight="2"
+							android:gravity="top|left" />
+
+						<TextView
+							android:id="@+id/doctor_detail_frag_workhour2"
+							style="@style/textview_doctor_small"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_weight="3"
+							android:gravity="top|center_horizontal" />
+
+						<TextView
+							android:id="@+id/doctor_detail_frag_workhour3"
+							style="@style/textview_doctor_small"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:gravity="top|center_horizontal" />
+
+						<TextView
+							android:id="@+id/doctor_detail_frag_workhour4"
+							style="@style/textview_doctor_small"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_weight="3"
+							android:gravity="top|center_horizontal" />
+					</LinearLayout>
+				</LinearLayout>
+
+				<include layout="@layout/divider_view" />
+
+				<LinearLayout
+					android:id="@+id/doctor_detail_frag_phone_layout"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:background="@android:color/transparent"
+					android:gravity="center"
+					android:orientation="horizontal"
+					android:padding="@dimen/padding_medium" >
+
+					<TextView
+						android:id="@+id/doctor_detail_frag_phone"
+						style="@style/textview_doctor"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:layout_weight="1"
+						android:gravity="center_vertical" />
+
+					<Button
+						android:id="@+id/doctor_detail_frag_phone_btn"
+						style="@style/textview_white_small"
+						android:layout_width="@dimen/doctor_details_btn_width"
+						android:layout_height="@dimen/doctor_details_btn_height"
+						android:layout_marginLeft="@dimen/margin_small"
+						android:layout_marginRight="@dimen/margin_small"
+						android:background="@drawable/doctor_details_btn"
+						android:paddingRight="@dimen/doctor_details_btn_padding"
+						android:text="@string/doctor_detail_frag_phone_btn" />
+				</LinearLayout>
+
+				<include layout="@layout/divider_view" />
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+
+</RelativeLayout>

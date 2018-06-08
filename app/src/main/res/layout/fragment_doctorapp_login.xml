@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/logo_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/eclaim_background_1136"
+    android:orientation="vertical"
+>
+
+    <RelativeLayout
+        android:id="@+id/logo_screen_hidden"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/enter_code_screen"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_centerInParent="true"
+            android:background="@color/transparent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                style="@style/textview_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/access_code_text_height"
+                android:background="@color/transparent"
+                android:contentDescription="@string/app_name"
+                android:gravity="center"
+                android:text="@string/login_instruction"
+                android:textAppearance="@style/mytextview"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@android:color/transparent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/textview_black_little_smaller"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/access_code_text_height"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_vertical"
+                    android:text="@string/clinic_code" />
+
+                <EditText
+                    android:id="@+id/et_doctorapp_login_cliniccode"
+                    style="@style/textview_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/access_code_text_height"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:background="@drawable/access_code_text_back"
+                    android:ellipsize="end"
+                    android:gravity="left|center_vertical"
+                    android:inputType="textCapCharacters"
+                    android:paddingLeft="10dp"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@android:color/transparent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/textview_black_little_smaller"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/access_code_text_height"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_vertical"
+                    android:text="@string/doctor_code" />
+
+                <EditText
+                    android:id="@+id/et_doctorapp_login_doctorcode"
+                    style="@style/textview_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/access_code_text_height"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:background="@drawable/access_code_text_back"
+                    android:ellipsize="end"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="10dp"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@android:color/transparent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/textview_black_little_smaller"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/access_code_text_height"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_vertical"
+                    android:text="@string/password" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/access_code_text_height"
+                    app:passwordToggleEnabled="true"
+                    app:hintEnabled="false">
+                <EditText
+                    android:id="@+id/et_doctorapp_login_password"
+                    style="@style/textview_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/access_code_text_height"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:background="@drawable/access_code_text_back"
+                    android:ellipsize="end"
+                    android:gravity="left|center_vertical"
+                    android:inputType="textPassword"
+                    android:paddingLeft="10dp"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/b_doctorapp_login"
+                style="@style/textview_white"
+                android:layout_width="@dimen/access_enter_btn_width"
+                android:layout_height="@dimen/access_enter_btn_height"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@drawable/ump_normal_btn"
+                android:gravity="center|top"
+                android:text="@string/access_code_btn_text"
+                android:textAllCaps="false"
+                android:visibility="visible" />
+
+            <TextView
+                style="@style/textview_black_small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:gravity="center"
+                android:text="@string/doctorapp_login_disclaimer" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

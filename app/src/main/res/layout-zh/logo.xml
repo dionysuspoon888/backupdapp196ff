@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/logo_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <RelativeLayout
+        android:id="@+id/logo_screen_hidden"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/logo_back"
+		android:orientation="vertical"
+        android:visibility="invisible" >
+
+        <LinearLayout
+            android:id="@+id/enter_code_screen"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/access_code_window_height"
+            android:layout_centerInParent="true"
+            android:background="@color/transparent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/access_code_view"
+                style="@style/textview_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/access_code_text_height"
+                android:background="@color/transparent"
+                android:contentDescription="@string/app_name"
+                android:gravity="center"
+                android:text="@string/access_code_text" />
+
+            <!-- android:inputType="numberSigned" android:hint="@string/access_code_hint" -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:background="@android:color/transparent"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/access_code_text_view_medical"
+                    style="@style/textview_black_little_smaller"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/access_code_text_height"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="@string/access_code_medical" />
+
+                <EditText
+                    android:id="@+id/access_code_edit_text_medical"
+                    style="@style/textview_black"
+                    android:layout_width="@dimen/access_code_edittext_width"
+                    android:layout_height="@dimen/access_code_text_height"
+                    android:background="@drawable/access_code_text_back"
+                    android:ellipsize="end"
+                    android:paddingLeft="10dp"
+                    android:gravity="left|center_vertical"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/access_code_text_view_dental"
+                    style="@style/textview_black_little_smaller"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/access_code_text_height"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="@string/access_code_dental" />
+
+                <EditText
+                    android:id="@+id/access_code_edit_text_dental"
+                    style="@style/textview_black"
+                    android:layout_width="@dimen/access_code_edittext_width"
+                    android:layout_height="@dimen/access_code_text_height"
+                    android:background="@drawable/access_code_text_back"
+                    android:ellipsize="end"
+                    android:paddingLeft="10dp"
+                    android:gravity="left|center_vertical"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/access_code_btn"
+                style="@style/textview_white"
+                android:layout_width="@dimen/access_enter_btn_width"
+                android:layout_height="@dimen/access_enter_btn_height"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@drawable/ump_normal_btn"
+                android:gravity="center"
+                android:text="@string/access_code_btn_text" />
+
+            <TextView
+                android:id="@+id/access_code_caption_msg"
+                style="@style/textview_black_small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:gravity="center"
+                android:text="@string/access_code_caption_msg" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/switch_btn_group_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_login_to_bottom"
+            android:background="@android:color/transparent"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_small"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/access_code_language_switch_text"
+                    style="@style/textview_black_small"
+                    android:layout_width="@dimen/textview_width"
+                    android:layout_height="@dimen/access_code_text_height"
+                    android:gravity="center"
+                    android:text="@string/language_switch_text" />
+
+                <RadioGroup
+                    android:id="@+id/access_code_language_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/access_enter_btn_height"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <ump.doctorlist.util.MyRadioButton
+                        android:id="@+id/access_code_language_zh"
+                        style="@style/textview_white_very_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/language_zh" />
+
+                    <ump.doctorlist.util.MyRadioButton
+                        android:id="@+id/access_code_language_en"
+                        style="@style/textview_white_very_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:text="@string/language_en" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/access_code_download_text"
+                    style="@style/textview_black_small"
+                    android:layout_width="@dimen/textview_width"
+                    android:layout_height="@dimen/access_code_text_height"
+                    android:gravity="center"
+                    android:text="@string/downlaod_text" />
+
+                <RadioGroup
+                    android:id="@+id/access_code_download_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/access_enter_btn_height"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <ump.doctorlist.util.MyRadioButton
+                        android:id="@+id/access_code_download_full_btn"
+                        style="@style/textview_white_very_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:text="@string/login_download_full" />
+
+                    <ump.doctorlist.util.MyRadioButton
+                        android:id="@+id/access_code_download_update_btn"
+                        style="@style/textview_white_very_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/login_download_update" />
+                </RadioGroup>
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

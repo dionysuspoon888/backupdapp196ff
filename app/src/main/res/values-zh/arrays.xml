@@ -1,0 +1,38 @@
+<resources>
+
+    <!-- <item>News</item> -->
+    <string-array name="corporate_frag_arrays">
+        <item>普通科醫生</item>
+        <item>專科醫生</item>
+        <item>檢測中心</item>
+        <item>物理治療中心</item>
+        <item>中醫藥中心</item>
+    </string-array>
+    
+    <string-array name="optional_array">
+        <item>X光</item>
+    </string-array>
+    
+    <string-array name="tab_list_temp_array">
+        <item>機場</item>
+        <item>大嶼山</item>
+        <item>馬灣</item>
+        <item>東湧</item>
+    </string-array>
+
+    <!--ESubmission-->
+    <string-array name="claim_type">
+        <item>普通科門診</item>
+        <item>專科門診</item>
+        <item>中醫門診</item>
+        <item>物理治療</item>
+        <item>病理檢查</item>
+    </string-array>
+
+    <string-array name="currency">
+        <item>港元</item>
+        <item>澳門幣</item>
+        <item>人民幣</item>
+        <item>其他</item>
+    </string-array>
+</resources>

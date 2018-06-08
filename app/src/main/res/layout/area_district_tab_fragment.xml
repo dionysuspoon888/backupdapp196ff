@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical" >
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <!-- android:layout_toLeftOf="@+id/next_button"  android:layout_toRightOf="@+id/up_button" -->
+            <!-- android:layout_width="match_parent" android:layout_weight="0" -->
+
+            <!--
+                 <HorizontalScrollView
+                android:id="@+id/tabscroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:scrollbars="none" >            -->
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <!-- </HorizontalScrollView> -->
+
+
+            <!-- android:layout_weight="0" -->
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="0dp"
+                android:layout_height="0dp" />
+
+            <ump.doctorlist.util.MyViewPager
+                android:id="@+id/tabviewpager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <!--
+                <android.support.v4.view.ViewPager
+                android:id="@+id/tabviewpager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+            -->
+        </LinearLayout>
+    </TabHost>
+
+</LinearLayout>

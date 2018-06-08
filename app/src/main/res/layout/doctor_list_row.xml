@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/padding_small"
+    android:paddingLeft="@dimen/padding_medium"
+    android:paddingRight="@dimen/padding_medium"
+    android:paddingTop="@dimen/padding_small" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <!-- textview_black_little_smaller -->
+
+        <TextView
+            android:id="@+id/doctor_info_name"
+            style="@style/textview_doctor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/doctor_info_title"
+            style="@style/textview_doctor_small"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <!--
+            <TextView
+            android:id="@+id/doctor_info_doc_code"
+            style="@style/textview_black_small"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/padding_small" />
+        -->
+    </LinearLayout>
+
+    <!-- android:src="@drawable/ump_doctor_star" -->
+
+    <LinearLayout
+        android:id="@+id/doctor_image_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/doctor_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/doctor_image_size_height"
+            android:paddingRight="@dimen/padding_small"
+            android:scaleType="fitXY" />
+    </LinearLayout>
+
+</LinearLayout>

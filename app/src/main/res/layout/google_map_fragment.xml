@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/google_map_frag_address_text"
+        style="@style/textview_black_small"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/padding_small"
+        android:paddingLeft="@dimen/padding_medium"
+        android:paddingRight="@dimen/padding_medium"
+        android:paddingTop="@dimen/padding_small"
+        />
+
+    <include layout="@layout/divider_view" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/doctor_address_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- android:clickable="true" android:enabled="true" -->
+
+</LinearLayout>

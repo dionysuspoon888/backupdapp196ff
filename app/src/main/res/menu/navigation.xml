@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home_title" />
+
+    <item
+        android:id="@+id/navigation_doctorlist"
+        android:icon="@drawable/ic_doctorlist"
+        android:title="@string/doctor_list_title" />
+
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_esubmit"
+        android:title="@string/non_network_claims" />
+
+    <item
+        android:id="@+id/navigation_setting"
+        android:icon="@drawable/ic_setting"
+        android:title="@string/setting_title" />
+
+
+
+</menu>

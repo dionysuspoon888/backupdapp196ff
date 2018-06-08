@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/page_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/main_title_background"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/system_setting"
+            style="@style/mytextview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/esubmission_title"
+            android:textIsSelectable="true" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+            <RelativeLayout
+                android:id="@+id/currency_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                android:minHeight="60dp"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/currency_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/currency_of_the_receipt"
+                    android:textColor="@color/black" />
+
+                <!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/currency_spinner"
+                    style="?android:attr/spinnerItemStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/black"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:gravity="right"/>-->
+
+                <Spinner
+                    android:id="@+id/currency_spinner"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center" />
+
+            <!--    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/currency_spinner"
+                    style="?android:attr/spinnerItemStyle"
+                    android:singleLine="true"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:gravity="right"/>-->
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/recipe_total_amount_row"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                android:minHeight="60dp"
+                android:orientation="horizontal"
+
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/recipe_total_amount_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+
+                    android:text="@string/total_amount_of_the_receipt"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/recipe_total_amount_edit_text"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/access_code_text_back"
+                    android:ellipsize="end"
+                    android:ems="10"
+                    android:gravity="end"
+                    android:inputType="number"
+                    android:paddingRight="8dp"
+                    android:paddingTop="8dp"
+                    android:selectAllOnFocus="true"
+                    android:singleLine="true"
+                    android:textAlignment="textEnd"
+                    android:imeOptions="actionDone"
+                    android:textColor="@color/black"
+                    android:maxLength="6"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/is_submitted_to_other_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                android:minHeight="60dp"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/is_submitted_to_other_row_textview"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:minWidth="300dp"
+                    android:text="@string/submitted_claim_other_insurers"
+                    android:textColor="@color/black" />
+
+                <Switch
+                    android:id="@+id/is_submitted_to_other_row_switch"
+                    android:layout_width="90dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:lineSpacingExtra="10sp"
+                    android:maxHeight="20dp"
+                    android:showText="true"
+                    android:splitTrack="false"
+                    android:switchTextAppearance="@style/textview_black"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textOff="@string/not_have"
+                    android:textOn="@string/have"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/amount_already_paid_by_other_insurer_row"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                android:minHeight="60dp"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/recipe_total_amount_textview"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/amount_already_paid_by_other_insurer"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/amount_already_paid_by_other_insurer_textview"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/access_code_text_back"
+                    android:ellipsize="end"
+                    android:ems="10"
+                    android:gravity="end"
+                    android:inputType="number"
+                    android:paddingRight="8dp"
+                    android:paddingTop="8dp"
+                    android:selectAllOnFocus="true"
+                    android:singleLine="true"
+                    android:textAlignment="textEnd"
+                    android:imeOptions="actionDone"
+                    android:textColor="@color/black"
+                    android:maxLength="6"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/consultation_date_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                android:minHeight="60dp"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/consultation_date_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/date_of_consultation"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/consultation_date_select_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:text="@string/please_select"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:gravity="end" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/diagnosis_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                android:minHeight="60dp"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/diagnosis_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/diagnosis"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/diagnosis_select_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:maxHeight="50dp"
+                    android:maxWidth="220dp"
+                    android:text="@string/please_select"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_layout_height"
+        android:background="@android:color/transparent"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/previous_button"
+            style="@style/textview_white"
+            android:layout_width="@dimen/btn_width_small"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ump_normal_btn"
+            android:gravity="center"
+            android:text="@string/previous_button"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/next_button"
+            style="@style/textview_white"
+            android:layout_width="@dimen/btn_width_small"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ump_normal_btn"
+            android:gravity="center"
+            android:text="@string/next_button"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>
