@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical|center_horizontal"
+        android:padding="18dp">
+
+        <TextView
+            android:text="Doctor Sign Template"
+            android:textSize="26sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    <LinearLayout
+         android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="12dp">
+
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="180dp"
+                android:layout_above="@+id/buttons_container"
+                android:id="@+id/signature_pad_container">
+                <FrameLayout
+                    android:id="@+id/signature_pad_linebordertop"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@android:color/darker_gray" />
+                <FrameLayout
+                    android:id="@+id/signature_pad_lineborderleft"
+                    android:layout_width="2dp"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentLeft="true"
+                    android:background="@android:color/darker_gray" />
+                <FrameLayout
+                    android:id="@+id/signature_pad_lineborderright"
+                    android:layout_width="2dp"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@android:color/darker_gray" />
+                <FrameLayout
+                    android:id="@+id/signature_pad_lineborderbottom"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@android:color/darker_gray" />
+                <TextView
+                    android:text="@string/doctorapp_doctor_sign"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    />
+
+                <com.github.gcacace.signaturepad.views.SignaturePad
+                    android:id="@+id/b_doctorsign_template_signature_pad"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    app:penMinWidth="2dp"
+                    app:penMaxWidth="2dp"
+                    app:velocityFilterWeight="0.9"/>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:gravity="bottom">
+                    <TextView
+                        android:text="X"
+                        android:textSize="32sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:paddingTop="16dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:padding="8dp"
+            android:gravity="center_horizontal|center_vertical">
+
+            <Button
+                android:id="@+id/b_doctorsign_template_clear_button"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/ump_normal_btn"
+                android:text="@string/voucher_clearsign" />
+
+            <Button
+                android:id="@+id/b_doctorsign_template_submit_button"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_toRightOf="@+id/clear_button"
+                android:layout_marginLeft="25dp"
+                android:background="@drawable/ump_normal_btn"
+                android:text="@string/membercard_b_submit"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

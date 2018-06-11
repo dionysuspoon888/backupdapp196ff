@@ -42,22 +42,10 @@ public class VoucherList1Fragment extends BaseFragment implements VoucherList1Ad
 
 
         Voucher1List = new ArrayList<>();
-        //login gives value
 
+        if(!GlobalConstants.eSignatureStatus){
             Voucher1List.add(new Voucher1Data("B317336", "0.0"));
-          //  Voucher1List.add(new Voucher1Data("B317337", "72.0"));
-           // Voucher1List.add(new Voucher1Data("B317338", "126.0"));
-
-
-//        if(GlobalConstants.eSignatureTable != null) {
-//            for (String key : GlobalConstants.eSignatureTable.keySet()) {
-//                for(int i=0;i<Voucher1List.size();i++){
-//                    if(Voucher1List.get(i).getVoucherNumber().equals(key)){
-//                        Voucher1List.remove(i);
-//                    }
-//                }
-//            }
-//        }
+        }
 
 
 
@@ -69,11 +57,9 @@ public class VoucherList1Fragment extends BaseFragment implements VoucherList1Ad
             // handle item click for processs status
 
             Intent intent = new Intent(getActivity(), VoucherDetailActivity.class);
-            //intent.putExtra(ClaimDetailActivity.CLAIM_DETAIL, (Parcelable) voucher1);
-            GlobalConstants.Voucher1DetailList = new ArrayList<>();
-            GlobalConstants.Voucher1DetailList.add(Voucher1List.get(i));
-            GlobalConstants.voucherListpositionClicked = Voucher1List.get(i).getVoucherNumber();
+
             startActivity(intent);
+
 
         });
 

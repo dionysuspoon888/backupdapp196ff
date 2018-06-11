@@ -10,11 +10,17 @@
         android:fillViewport="true"
         android:layout_weight="1"
         android:scrollbars="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal" >
 <LinearLayout
+    android:id="@+id/ll_evoucher_scan"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal" >
 
     <ImageView
         android:layout_width="match_parent"
@@ -24,13 +30,15 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
     <ImageView
         android:id="@+id/iv_evouchersign"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleType="fitXY"
-        android:src="@drawable/esignatureupdated"
-        />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/esignatureupdated" />
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -42,29 +50,77 @@
         android:layout_weight="0.47"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        app:penMaxWidth="2dp"
-        app:penMinWidth="2dp"
+        app:penMaxWidth="1dp"
+        app:penMinWidth="1dp"
         app:velocityFilterWeight="0.9" />
     <android.support.v4.widget.Space
         android:layout_weight="0.06"
         android:layout_width="0dp"
         android:layout_height="50dp" />
 
+    <ImageView
+        android:id="@+id/iv_doctor_sign"
+        android:layout_weight="0.47"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:scaleType="fitXY"
+        android:visibility="gone"/>
     <com.github.gcacace.signaturepad.views.SignaturePad
+        android:id="@+id/doctor_sign"
         android:layout_weight="0.47"
         android:layout_width="0dp"
         android:layout_height="50dp"
         app:penMinWidth="2dp"
         app:penMaxWidth="2dp"
         app:velocityFilterWeight="0.9"
-        android:id="@+id/doctor_sign"
-
-        />
+        android:visibility="gone" />
 </LinearLayout>
 </RelativeLayout>
-
-
 </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll_evoucherdetail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:paddingTop="16dp">
+
+        <Button
+            android:id="@+id/b_evoucher_clear_patientsign"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="left"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/ump_normal_btn"
+            android:text="@string/voucher_clearsign" />
+
+        <Button
+            android:id="@+id/b_evoucher_clear_doctorsign"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/ump_normal_btn"
+            android:text="@string/voucher_clearsign"
+            android:visibility="gone"/>
+    </RelativeLayout>
+    <Button
+        android:id="@+id/b_evoucher_submit"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@+id/clear_button"
+        android:background="@drawable/ump_normal_btn"
+        android:text="@string/membercard_b_submit"
+        />
+        </LinearLayout>
 
     </ScrollView>
 </RelativeLayout>

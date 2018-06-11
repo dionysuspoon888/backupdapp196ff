@@ -10,8 +10,8 @@
     <string name="coordinator">Coordinator Layout</string>
 
 
-    <string name="app_name">UMP服務點</string>
-    <string name="ump_version_num">Version : 3.1.2 Build 20180327</string>
+    <string name="app_name">UMP Doctor app</string>
+    <string name="ump_version_num">Version : 1.0.0 Build 20180611</string>
     <string name="access_code_example">hcsffu</string>
 
     <string name="access_code_medical">Medical</string>
@@ -523,7 +523,20 @@
     <string name="clinic_code">Clinic Code</string>
     <string name="doctor_code">Doctor Code</string>
     <string name="doctorapp_login_disclaimer">Exclusively used by UMP doctor or nurse.</string>
-    <string name="doctorapp_check_evoucher">Check Medical eVoucher</string>
+    <string name="doctorapp_check_evoucher">Check Medical Voucher</string>
+
+    <string name="doctorapp_scan_evoucher">Scan</string>
+
+    <string name="doctorapp_doctor_sign">Doctor Signs here</string>
+
+    <string name="doctorapp_doctor_use_doctorsignature_template">Use doctor signature template</string>
+
+    <string name="doctorapp_doctor_use_doctorsignature_yes">YES</string>
+    <string name="doctorapp_doctor_use_doctorsignature_no">NO</string>
+
+    <string name="doctorapp_main_setting">SETTING</string>
+    <string name="doctorapp_main_doctorsigntemplate_text">DOCTOR SIGNATURE TEMPLATE</string>
+
 
 
 </resources>

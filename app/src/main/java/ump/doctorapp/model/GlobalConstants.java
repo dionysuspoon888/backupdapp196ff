@@ -32,6 +32,17 @@ public class GlobalConstants {
     //Current Location
     public static String Location = "";
 
+    /////
+    //For doctorapp eVoucher
+    public static TreeMap<String,Bitmap> eVoucherDataTreeMap = new TreeMap<>();
+    public static Boolean eSignatureStatus = false;
+
+    public static Boolean useDoctorSignTemplate = false;
+    public static Bitmap doctorSignTemplate;
+
+
+
+
     //////////
     //For eSinature Template
     public static Bitmap bitmap ;
@@ -47,6 +58,11 @@ public class GlobalConstants {
 
     public static TreeMap<String,String> eSignatureTable = new TreeMap<>();
     public static Hashtable<String,String> signingDateTable = new Hashtable<>();
+
+    //Hawk Key for Login Saving
+
+    public static final String doctorSignTemplateKey = "DoctorSignTemplateKey";
+    public static final String useDoctorSignTemplateStatusKey = "useDoctorSignTemplateStatusKey";
 
 
 }

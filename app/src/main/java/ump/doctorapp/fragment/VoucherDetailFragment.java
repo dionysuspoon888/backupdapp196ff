@@ -11,9 +11,14 @@ import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.util.Base64;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.github.gcacace.signaturepad.views.SignaturePad;
 
@@ -23,8 +28,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TreeMap;
 
 import ump.doctorapp.R;
+import ump.doctorapp.VoucherActivity;
+import ump.doctorapp.model.GlobalConstants;
 
 /**
  * Created by Dionysus.Poon on 8/6/2018.
@@ -32,9 +43,19 @@ import ump.doctorapp.R;
 
 public class VoucherDetailFragment extends BaseFragment {
 
-    private SignaturePad mSignaturePad;
+    public SignaturePad patient_sign;
+    public SignaturePad doctor_sign;
 
-    public Boolean signsomething;
+    public Button b_evoucher_clear_patientsign;
+    public Button b_evoucher_clear_doctorsign;
+    public Button b_evoucher_submit;
+
+    public Boolean patientsignsStatus;
+    public Boolean doctorsignsStatus;
+
+    public LinearLayout ll_evoucher_scan;
+
+    public ImageView iv_doctor_sign;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -42,29 +63,158 @@ public class VoucherDetailFragment extends BaseFragment {
 
 //
         //init
-        signsomething = false;
+        patientsignsStatus = false;
+        doctorsignsStatus = false;
 
-        mSignaturePad = (SignaturePad) v.findViewById(R.id.patient_sign);
-        mSignaturePad.setOnSignedListener(new SignaturePad.OnSignedListener() {
+        if(GlobalConstants.useDoctorSignTemplate == true && GlobalConstants.doctorSignTemplate != null){
+            doctorsignsStatus = true;
+        }else{
+            doctorsignsStatus = false;
+        }
+
+        patient_sign = (SignaturePad) v.findViewById(R.id.patient_sign);
+        doctor_sign =(SignaturePad) v.findViewById(R.id.doctor_sign);
+        b_evoucher_clear_patientsign = v.findViewById(R.id.b_evoucher_clear_patientsign);
+        b_evoucher_clear_doctorsign = v.findViewById(R.id.b_evoucher_clear_doctorsign);
+        b_evoucher_submit = v.findViewById(R.id.b_evoucher_submit);
+
+        ll_evoucher_scan = v.findViewById(R.id.ll_evoucher_scan);
+        iv_doctor_sign = v.findViewById(R.id.iv_doctor_sign);
+
+        if(GlobalConstants.useDoctorSignTemplate == true && GlobalConstants.doctorSignTemplate != null){
+                doctor_sign.setVisibility(View.GONE);
+                b_evoucher_clear_doctorsign.setVisibility(View.GONE);
+                iv_doctor_sign.setImageBitmap(GlobalConstants.doctorSignTemplate);
+                iv_doctor_sign.setVisibility(View.VISIBLE);
+
+        }else{
+            doctor_sign.setVisibility(View.VISIBLE);
+            b_evoucher_clear_doctorsign.setVisibility(View.VISIBLE);
+            iv_doctor_sign.setVisibility(View.GONE);
+
+        }
+
+
+        patient_sign.setOnSignedListener(new SignaturePad.OnSignedListener() {
             @Override
             public void onStartSigning() {
-                signsomething = true;
+                patientsignsStatus = true;
             }
 
             @Override
             public void onSigned() {
-                signsomething = true;
+                patientsignsStatus = true;
 
             }
 
             @Override
             public void onClear() {
-                signsomething = false;
+                patientsignsStatus = false;
 
             }
         });
 
+        doctor_sign.setOnSignedListener(new SignaturePad.OnSignedListener() {
+            @Override
+            public void onStartSigning() {
+                doctorsignsStatus = true;
+            }
+
+            @Override
+            public void onSigned() {
+                doctorsignsStatus = true;
+
+
+            }
+
+            @Override
+            public void onClear() {
+                doctorsignsStatus = false;
+
+
+            }
+        });
+
+
+        b_evoucher_clear_patientsign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                patient_sign.clear();
+            }
+        });
+
+        b_evoucher_clear_doctorsign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               doctor_sign.clear();
+            }
+        });
+
+        b_evoucher_submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(patientsignsStatus == true && doctorsignsStatus == true) {
+
+                    GlobalConstants.eVoucherDataTreeMap = new TreeMap<>();
+                    GlobalConstants.eVoucherDataTreeMap.put("0",takeScreenShot(ll_evoucher_scan));
+
+                    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+                    Date date = new Date();
+                    GlobalConstants.signingDateTable.put("0", dateFormat.format(date));
+
+
+                    GlobalConstants.eSignatureStatus = true;
+
+                    String eSignatureSubmit = "eSignature Submitted";
+                    if (isAdded()) {
+                        eSignatureSubmit = getString(R.string.voucher_esignaturesubmitted);
+                    }
+
+                   Toast.makeText(getActivity().getBaseContext(), eSignatureSubmit, Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getActivity(), VoucherActivity.class));
+
+                    //m
+//                    if (addSignatureToGallery(takeScreenShot(ll_evoucher_scan))) {
+//                        Toast.makeText(getActivity(), "Signature saved into the Gallery", Toast.LENGTH_SHORT).show();
+//                    } else {
+//                        // Toast.makeText(getBaseContext(), "Unable to store the signature", Toast.LENGTH_SHORT).show();
+//                    }
+
+//                if (addSvgSignatureToGallery(mSignaturePad.getSignatureSvg())) {
+//                    Toast.makeText(MainActivity.this, "SVG Signature saved into the Gallery", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    Toast.makeText(MainActivity.this, "Unable to store the SVG signature", Toast.LENGTH_SHORT).show();
+//                }
+
+                }else{
+                    String tmpeSignaturePleaseSign = "請簽署";
+                    if (isAdded()) {
+                        tmpeSignaturePleaseSign = getString(R.string.voucher_esignaturepleasesign);
+                    }
+                    Toast.makeText(getActivity().getBaseContext(), tmpeSignaturePleaseSign, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
         return v;
+    }
+
+    public Bitmap takeScreenShot(View view) {
+        // configuramos para que la view almacene la cache en una imagen
+        view.setDrawingCacheEnabled(true);
+        view.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
+        view.buildDrawingCache();
+
+        if(view.getDrawingCache() == null) return null; // Verificamos antes de que no sea null
+
+        // utilizamos esa cache, para crear el bitmap que tendra la imagen de la view actual
+        Bitmap snapshot = Bitmap.createBitmap(view.getDrawingCache());
+        view.setDrawingCacheEnabled(false);
+        view.destroyDrawingCache();
+
+        return snapshot;
     }
 
     public File getAlbumStorageDir(String albumName) {
@@ -77,21 +227,21 @@ public class VoucherDetailFragment extends BaseFragment {
         return file;
     }
 
-    public void saveBitmapToJPG(Bitmap bitmap, File photo) throws IOException {
+    public void saveBitmap(Bitmap bitmap, File photo) throws IOException {
         Bitmap newBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(newBitmap);
         canvas.drawColor(Color.WHITE);
         canvas.drawBitmap(bitmap, 0, 0, null);
         OutputStream stream = new FileOutputStream(photo);
-        newBitmap.compress(Bitmap.CompressFormat.JPEG, 80, stream);
+        newBitmap.compress(Bitmap.CompressFormat.PNG, 80, stream);
         stream.close();
     }
 
-    public boolean addJpgSignatureToGallery(Bitmap signature) {
+    public boolean addSignatureToGallery(Bitmap signature) {
         boolean result = false;
         try {
             File photo = new File(getAlbumStorageDir("SignaturePad"), String.format("Signature_%d.jpg", System.currentTimeMillis()));
-            saveBitmapToJPG(signature, photo);
+            saveBitmap(signature, photo);
             scanMediaFile(photo);
             result = true;
         } catch (IOException e) {

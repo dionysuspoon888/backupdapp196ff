@@ -5,33 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/page_background"
     android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@drawable/main_title_background"
-        android:orientation="horizontal">
 
-        <Space
-            android:layout_width="20dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <TextView
-            android:id="@+id/system_setting"
-            style="@style/mytextview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="@string/menu_action"
-            android:textIsSelectable="true" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="right"
-            android:orientation="vertical" />
-    </LinearLayout>
 
 
 
@@ -48,29 +22,44 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_medium"
-                android:layout_marginRight="@dimen/margin_medium"
-                android:layout_weight="1"
-                android:background="@drawable/claim_menu_submit"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:visibility="gone"/>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="40dp" />
 
             <Button
                 android:id="@+id/b_doctorapp_main_checkvoucher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_medium"
-                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
                 android:layout_weight="1"
                 android:text="@string/doctorapp_check_evoucher"
+                android:background="@drawable/ump_normal_btn"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+            <Button
+                android:id="@+id/b_doctorapp_main_doctorsigntemplater"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_weight="1"
+                android:text="@string/doctorapp_main_doctorsigntemplate_text"
+                android:background="@drawable/ump_normal_btn"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+            <Button
+                android:id="@+id/b_doctorapp_main_setting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_weight="1"
+                android:text="@string/doctorapp_main_setting"
                 android:background="@drawable/ump_normal_btn"
                 android:textColor="@color/white"
                 android:textSize="22sp" />

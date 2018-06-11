@@ -7,6 +7,8 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.widget.Button;
 
 import ump.doctorapp.fragment.VoucherList1Fragment;
 import ump.doctorapp.fragment.VoucherList2Fragment;
@@ -22,6 +24,8 @@ public class VoucherActivity extends BaseActivity {
 
     //ViewPager
     private ViewPager viewPager;
+
+    public Button back_btn;
 //sdsada
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,6 +46,14 @@ public class VoucherActivity extends BaseActivity {
         //Change the page when click the tabs
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager));
+
+        back_btn = findViewById(R.id.back_btn);
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
     }
 

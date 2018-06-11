@@ -8,8 +8,10 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
+import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.ViewGroup;
@@ -23,6 +25,7 @@ import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 
+import java.io.ByteArrayOutputStream;
 import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.Map;
@@ -238,6 +241,27 @@ public class BaseFragment extends Fragment {
         return;
 
     }
+
+    public String BitmapToBase64(Bitmap bitmap){
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+        byte[] byteArray = byteArrayOutputStream .toByteArray();
+        String encodedString = Base64.encodeToString(byteArray, Base64.DEFAULT);
+        return encodedString;
+    }
+
+
+    public Bitmap Base64ToImage(String inputBase64Image){
+
+
+        //Base64 Image decode
+        byte[] decodedString = Base64.decode(inputBase64Image, Base64.DEFAULT);
+        Bitmap base64Image = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+
+        // iv_testing.setImageBitmap(decodedByte);
+        return base64Image;
+    }
+
 
 
 

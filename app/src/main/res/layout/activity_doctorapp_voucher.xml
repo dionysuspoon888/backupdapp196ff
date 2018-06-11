@@ -5,8 +5,62 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical" >
+    <RelativeLayout
+        android:id="@+id/rl_doctorapp_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/linear_layout_height"
+        android:background="@drawable/main_title_background"
+        android:orientation="horizontal" >
 
-<android.support.design.widget.TabLayout
+        <Button
+            android:id="@+id/back_btn"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_gravity="center"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="@dimen/margin_small"
+            android:background="@drawable/back_home_btn"
+            android:contentDescription="@string/app_name" />
+        <Button
+            android:layout_toRightOf="@+id/back_btn"
+            android:id="@+id/b_membercard_testingactivity"
+            android:text="TestingActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_membercard_toptitle"
+            style="@style/mytextview"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignBaseline="@+id/back_btn"
+            android:layout_alignBottom="@+id/back_btn"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            android:text="UMP Doctor App"
+            android:textIsSelectable="true"
+            android:textSize="22sp" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical" >
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tb_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+            </android.support.v7.widget.Toolbar>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <android.support.design.widget.TabLayout
 android:id="@+id/voucher_tabLayout"
 android:layout_width="match_parent"
 android:layout_height="54dp"

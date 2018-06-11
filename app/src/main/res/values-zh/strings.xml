@@ -1,7 +1,7 @@
 <resources>
 
-    <string name="app_name">UMP服務點</string>
-    <string name="ump_version_num">版本 : 3.1.2 Build 20180327</string>
+    <string name="app_name">UMP Doctor app</string>
+    <string name="ump_version_num">版本 : 1.0.0 Build 20180611</string>
     
     <string name="medical_scheme">\n醫療計劃</string>
     <string name="check_sum_data_not_match">服務端錯誤</string>
@@ -470,4 +470,17 @@
     <string name="doctor_code">醫生編號</string>
     <string name="doctorapp_login_disclaimer">聯合醫務醫生或護士專用。</string>
     <string name="doctorapp_check_evoucher">查詢醫療單據</string>
+    <string name="doctorapp_scan_evoucher">掃描</string>
+
+    <string name="doctorapp_doctor_sign">醫生簽署</string>
+
+    <string name="doctorapp_doctor_use_doctorsignature_template">使用醫生簽署模板</string>
+
+    <string name="doctorapp_doctor_use_doctorsignature_yes">是</string>
+    <string name="doctorapp_doctor_use_doctorsignature_no">否</string>
+
+    <string name="doctorapp_main_setting">設定</string>
+    <string name="doctorapp_main_doctorsigntemplate_text">醫生簽署模板</string>
+
+
 </resources>
