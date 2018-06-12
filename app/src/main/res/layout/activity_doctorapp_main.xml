@@ -11,7 +11,8 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/linear_layout_height"
             android:background="@drawable/main_title_background"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:gravity="center_horizontal|center_vertical">
 
             <Button
                 android:id="@+id/back_btn"
@@ -38,10 +39,10 @@
                 android:layout_alignBaseline="@+id/back_btn"
                 android:layout_alignBottom="@+id/back_btn"
                 android:layout_centerHorizontal="true"
-                android:gravity="center_vertical"
+                android:gravity="center_horizontal"
                 android:text="UMP Doctor App"
                 android:textIsSelectable="true"
-                android:textSize="22sp" />
+                android:textSize="18sp" />
 
 
             <LinearLayout

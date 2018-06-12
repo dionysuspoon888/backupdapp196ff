@@ -415,7 +415,7 @@
     <string name="voucher_esignature">電子簽署</string>
 
     <string name="voucher_tab1">添加隊列</string>
-    <string name="voucher_tab2">醫療卡記錄</string>
+    <string name="voucher_tab2">醫療單據記錄</string>
 
     <string name="voucher_signdate">簽署日期\n(yyyy/mm/dd)</string>
     <string name="voucher_esignaturesubmitted">電子簽署已提交</string>
@@ -466,6 +466,12 @@
 
     <!-- Doctor app-->
 
+    <!-- Title -->
+    <string name="doctorapp_medicalvoucher_title">醫療單據</string>
+    <string name="doctorapp_signaturetemplate_title">醫生簽署模板</string>
+    <string name="doctorapp_setting_title">設定</string>
+
+    <!-- -->
     <string name="clinic_code">診所編號</string>
     <string name="doctor_code">醫生編號</string>
     <string name="doctorapp_login_disclaimer">聯合醫務醫生或護士專用。</string>
@@ -481,6 +487,21 @@
 
     <string name="doctorapp_main_setting">設定</string>
     <string name="doctorapp_main_doctorsigntemplate_text">醫生簽署模板</string>
+    <string name="membercard_keeplogin">記住帳號</string>
+
+
+    <string name="doctorapp_setting_doctorsigntemplate">未設定醫生簽署模板</string>
+
+    <string name="doctorapp_main_doctorsigntemplate">醫生簽署模板</string>
+    <string name="voucher_esignaturetemplatesaved">醫生簽署模板已保存</string>
+    <string name="doctorapp_b_save">保存</string>
+
+
+
+    <!-- Scan-->
+    <string name="doctorapp_scanss">醫療單據存入照片庫</string>
+    <string name="doctorapp_scanff">無法存儲醫療單據</string>
+    <string name="doctorapp_scanff2">無法將圖像寫入外部存儲器</string>
 
 
 </resources>

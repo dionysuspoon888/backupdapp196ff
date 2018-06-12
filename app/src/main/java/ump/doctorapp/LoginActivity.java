@@ -14,4 +14,11 @@ public class LoginActivity extends BaseActivity {
         startFrag(R.id.doctorapp_container,new LoginFragment(),getFragmentManager());
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAffinity();
+
+    }
 }

@@ -59,6 +59,7 @@ public class VoucherList2Fragment extends BaseFragment  implements VoucherList2A
             Intent intent = new Intent(getActivity(), VoucherDetail2Activity.class);
             startActivity(intent);
 
+
         });
 
 

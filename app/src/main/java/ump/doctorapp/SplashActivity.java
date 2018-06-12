@@ -11,7 +11,12 @@ import android.view.animation.Animation.AnimationListener;
 
 import com.orhanobut.hawk.Hawk;
 
+import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.TreeMap;
+
 import ump.doctorapp.model.GlobalConstants;
+import ump.doctorapp.model.Voucher1Data;
 
 /**
  * Created by Dionysus.Poon on 8/6/2018.
@@ -24,9 +29,12 @@ public class SplashActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_launch);
+        initData();
 
-//        //clear all Hawk data
-//       Hawk.deleteAll();
+
+         //clear all Hawk data
+      // Hawk.deleteAll();
+
         if(!(Hawk.get(GlobalConstants.doctorSignTemplateKey) == null)) {
             GlobalConstants.doctorSignTemplate = Base64ToImage((String) Hawk.get(GlobalConstants.doctorSignTemplateKey));
         }
@@ -78,5 +86,23 @@ public class SplashActivity extends BaseActivity {
         activityClass = LoginActivity.class;
         startActivity(new Intent(this, activityClass));
         finish();
+    }
+
+    public void initData(){
+        GlobalConstants.eVoucherDataTreeMap = new TreeMap<>();
+        GlobalConstants.eSignatureStatus = false;
+
+        GlobalConstants.useDoctorSignTemplate = false;
+        GlobalConstants.doctorSignTemplate = null;
+        GlobalConstants.bitmap = null;
+        GlobalConstants.Base64String = "";
+        GlobalConstants.size = 0;
+
+        GlobalConstants.Voucher1DetailList = new ArrayList<>();
+
+        GlobalConstants.voucherListpositionClicked = "";
+
+        GlobalConstants.eSignatureTable = new TreeMap<>();
+        GlobalConstants.signingDateTable = new Hashtable<>();
     }
 }

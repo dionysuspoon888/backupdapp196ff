@@ -1,5 +1,6 @@
 package ump.doctorapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
@@ -16,5 +17,13 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         startFrag(R.id.doctorapp_container,new MainFragment(),getFragmentManager());
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 }

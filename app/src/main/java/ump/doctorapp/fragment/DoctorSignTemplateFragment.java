@@ -1,6 +1,8 @@
 package ump.doctorapp.fragment;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -29,6 +31,12 @@ public class DoctorSignTemplateFragment extends BaseFragment {
     public Button b_doctorsign_template_clear_button;
     public Button b_doctorsign_template_submit_button;
     public Boolean doctorsignsStatus;
+
+
+    //m
+    private Bitmap bitmap;
+
+    private Canvas canvas;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -74,7 +82,8 @@ public class DoctorSignTemplateFragment extends BaseFragment {
 
 
                     if(b_doctorsign_template_signature_pad.getSignatureBitmap() != null) {
-                        GlobalConstants.doctorSignTemplate = b_doctorsign_template_signature_pad.getSignatureBitmap();
+
+                        GlobalConstants.doctorSignTemplate = b_doctorsign_template_signature_pad.getTransparentSignatureBitmap();
 
                         Hawk.put(GlobalConstants.doctorSignTemplateKey, BitmapToBase64(GlobalConstants.doctorSignTemplate));
                     }
@@ -82,9 +91,10 @@ public class DoctorSignTemplateFragment extends BaseFragment {
 
                     Hawk.put(GlobalConstants.useDoctorSignTemplateStatusKey,GlobalConstants.useDoctorSignTemplate );
 
-                    String eSignatureSubmit = "eSignature Submitted";
+                    String eSignatureSubmit = "Doctor Signature Template has saved";
+
                     if (isAdded()) {
-                        eSignatureSubmit = getString(R.string.voucher_esignaturesubmitted);
+                        eSignatureSubmit = getString(R.string.voucher_esignaturetemplatesaved);
                     }
 
                     Toast.makeText(getActivity().getBaseContext(), eSignatureSubmit, Toast.LENGTH_SHORT).show();

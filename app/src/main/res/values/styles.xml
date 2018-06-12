@@ -71,7 +71,7 @@
 
     <style name="textview_blue" parent="@android:style/TextAppearance">
         <item name="android:textSize">@dimen/font_size</item>
-        <item name="android:textColor">@color/access_code_blue</item>
+        <item name="android:textColor">#f68428</item>
         <item name="android:background">@android:color/transparent</item>
     </style>
 
@@ -101,7 +101,7 @@
 
     <style name="mytextview" parent="@android:style/TextAppearance">
         <item name="android:textSize">@dimen/font_size_small</item>
-        <item name="android:textColor">@color/mytextcolor</item>
+        <item name="android:textColor">#f68428</item>
         <item name="android:textStyle">bold</item>
         <item name="android:background">@android:color/transparent</item>
     </style>

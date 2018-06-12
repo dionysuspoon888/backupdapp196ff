@@ -63,6 +63,10 @@ public class GlobalConstants {
 
     public static final String doctorSignTemplateKey = "DoctorSignTemplateKey";
     public static final String useDoctorSignTemplateStatusKey = "useDoctorSignTemplateStatusKey";
+    public static final String clinicCodeKey = "clinicCodeKey";
+    public static final String doctorCodeKey = "doctorCodeKey";
+    public static final String passwordKey = "passwordKey";
+    public static final String checkBoxKey = "checkBoxKey";
 
 
 }

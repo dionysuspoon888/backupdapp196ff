@@ -149,18 +149,30 @@
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>
 
+
+            <CheckBox
+                android:id="@+id/cb_doctorapp_keeplogin"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="@string/membercard_keeplogin"
+                android:layout_marginTop="12dp"
+                android:layout_gravity="left"
+                android:textSize="11sp"
+                android:textColor="#888888"
+
+
+                />
+
             <Button
                 android:id="@+id/b_doctorapp_login"
                 style="@style/textview_white"
                 android:layout_width="@dimen/access_enter_btn_width"
                 android:layout_height="@dimen/access_enter_btn_height"
-                android:layout_marginTop="@dimen/margin_medium"
                 android:background="@drawable/ump_normal_btn"
                 android:gravity="center|top"
                 android:text="@string/access_code_btn_text"
                 android:textAllCaps="false"
                 android:visibility="visible" />
-
             <TextView
                 style="@style/textview_black_small"
                 android:layout_width="match_parent"
@@ -168,7 +180,7 @@
                 android:layout_marginLeft="@dimen/margin_small"
                 android:layout_marginRight="@dimen/margin_small"
                 android:layout_marginTop="@dimen/margin_small"
-                android:gravity="center"
+                android:gravity="center|top"
                 android:text="@string/doctorapp_login_disclaimer" />
         </LinearLayout>
 

@@ -12,7 +12,7 @@
         android:padding="18dp">
 
         <TextView
-            android:text="Doctor Sign Template"
+            android:text="@string/doctorapp_main_doctorsigntemplate"
             android:textSize="26sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

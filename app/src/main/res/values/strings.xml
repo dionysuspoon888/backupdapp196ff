@@ -469,7 +469,7 @@
     <string name="voucher_esignature">eSignature</string>
 
     <string name="voucher_tab1">Add Queue</string>
-    <string name="voucher_tab2">Medical Card Record</string>
+    <string name="voucher_tab2">Medical Voucher Record</string>
 
     <string name="voucher_signdate">Signing Date\n(yyyy/mm/dd)</string>
 
@@ -520,6 +520,12 @@
 
     <!-- Doctor app-->
 
+    <!-- Title -->
+    <string name="doctorapp_medicalvoucher_title">MEDICAL VOUCHER</string>
+    <string name="doctorapp_signaturetemplate_title">DOCTOR SIGNATURE\nTEMPLATE</string>
+    <string name="doctorapp_setting_title">SETTING</string>
+
+    <!-- -->
     <string name="clinic_code">Clinic Code</string>
     <string name="doctor_code">Doctor Code</string>
     <string name="doctorapp_login_disclaimer">Exclusively used by UMP doctor or nurse.</string>
@@ -536,6 +542,23 @@
 
     <string name="doctorapp_main_setting">SETTING</string>
     <string name="doctorapp_main_doctorsigntemplate_text">DOCTOR SIGNATURE TEMPLATE</string>
+
+    <string name="membercard_keeplogin">Remember account</string>
+
+
+    <string name="doctorapp_setting_doctorsigntemplate">Doctor Signature Template is not setted</string>
+
+    <string name="doctorapp_main_doctorsigntemplate">Doctor Signature Template</string>
+    <string name="voucher_esignaturetemplatesaved">Doctor Signature Template has saved</string>
+
+    <string name="doctorapp_b_save">SAVE</string>
+
+    <!-- Scan-->
+    <string name="doctorapp_scanss">Medical Voucher saved into the Gallery</string>
+    <string name="doctorapp_scanff">Unable to store the Medical Voucher</string>
+    <string name="doctorapp_scanff2">Cannot write images to external storage</string>
+
+
 
 
 

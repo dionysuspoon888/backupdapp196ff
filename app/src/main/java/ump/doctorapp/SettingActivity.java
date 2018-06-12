@@ -73,6 +73,8 @@ public class SettingActivity extends BaseActivity {
 
     public boolean useDoctorSignTemplate = false;
 
+    public TextView tv_membercard_toptitle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,7 +111,7 @@ public class SettingActivity extends BaseActivity {
         tv_use_doctorsignature_template = findViewById(R.id.tv_use_doctorsignature_template);
         back_btn = findViewById(R.id.back_btn);
         b_setting_logout_real = findViewById(R.id.b_setting_logout_real);
-
+        tv_membercard_toptitle = findViewById(R.id.tv_membercard_toptitle);
 
         access_code_language_zh.setButtonDrawable(new ColorDrawable(
                 Color.TRANSPARENT));
@@ -125,10 +127,12 @@ public class SettingActivity extends BaseActivity {
 
 
         if (tempLanguageConfig.equals(Locale.CHINESE.toString())) {
-            // TODO
-            access_code_language_en.startAnimation(CustomRadioButton.alpha_to_half);
-            cur_language_zh = true;
-            setLanguage(cur_language_zh);
+                Log.i("1234","doctorSignTemplateKey not Null");
+                // TODO
+                access_code_language_en.startAnimation(CustomRadioButton.alpha_to_half);
+                cur_language_zh = true;
+                setLanguage(cur_language_zh);
+
         } else if (tempLanguageConfig.equals(Locale.ENGLISH.toString())) {
             // TODO
             access_code_language_zh.startAnimation(CustomRadioButton.alpha_to_half);
@@ -170,14 +174,21 @@ public class SettingActivity extends BaseActivity {
         rb_doctorapp_usedoctorsignaturetemplate_yes.setOnClickListener(v -> {
 
             if (!cur_show_tutorial_zh) {
-                cur_show_tutorial_zh = true;
+                if(!(Hawk.get(GlobalConstants.doctorSignTemplateKey) == null)) {
+                    cur_show_tutorial_zh = true;
 
-                GlobalConstants.useDoctorSignTemplate = true;
-                Hawk.put(GlobalConstants.useDoctorSignTemplateStatusKey,GlobalConstants.useDoctorSignTemplate);
+                    GlobalConstants.useDoctorSignTemplate = true;
+                    Hawk.put(GlobalConstants.useDoctorSignTemplateStatusKey, GlobalConstants.useDoctorSignTemplate);
 
-                setShowTutorial(cur_show_tutorial_zh);
+                    setShowTutorial(cur_show_tutorial_zh);
 
-                Log.i(TAG, "SettingActivity show_tutorial_zh.setOnClickListener");
+                    Log.i(TAG, "SettingActivity show_tutorial_zh.setOnClickListener");
+                }else{
+                    Log.i("1234","doctorSignTemplateKey Null");
+                    String doctorapp_setting_doctorsigntemplate = getString(R.string.doctorapp_setting_doctorsigntemplate);
+                    alertCenterStyle(doctorapp_setting_doctorsigntemplate,this);
+
+                }
             }
         });
 
@@ -214,7 +225,7 @@ public class SettingActivity extends BaseActivity {
     }
 
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
 
         // TODO
@@ -310,6 +321,7 @@ public class SettingActivity extends BaseActivity {
             tv_language.setText(R.string.language_switch_text);
             tv_use_doctorsignature_template.setText(R.string.doctorapp_doctor_use_doctorsignature_template);
             b_setting_logout_real.setText(R.string.membercard_setting_logout_real);
+            tv_membercard_toptitle.setText(R.string.doctorapp_setting_title);
         }catch (NullPointerException e){
             e.printStackTrace();
         }

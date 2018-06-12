@@ -35,45 +35,49 @@
         android:id="@+id/iv_evouchersign"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
         android:src="@drawable/esignatureupdated" />
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:layout_alignBottom="@+id/iv_evouchersign"
-    android:padding="8dp">
+    android:layout_alignBottom="@+id/iv_evouchersign">
+
     <com.github.gcacace.signaturepad.views.SignaturePad
         android:id="@+id/patient_sign"
-        android:layout_weight="0.47"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginBottom="9dp"
+        android:layout_weight="0.47"
         app:penMaxWidth="1dp"
         app:penMinWidth="1dp"
         app:velocityFilterWeight="0.9" />
     <android.support.v4.widget.Space
-        android:layout_weight="0.06"
+        android:layout_weight="0.01"
         android:layout_width="0dp"
-        android:layout_height="50dp" />
+        android:layout_height="60dp" />
 
     <ImageView
         android:id="@+id/iv_doctor_sign"
         android:layout_weight="0.47"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:scaleType="fitXY"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        android:layout_marginBottom="9dp"
+        android:layout_marginRight="7dp"/>
     <com.github.gcacace.signaturepad.views.SignaturePad
         android:id="@+id/doctor_sign"
         android:layout_weight="0.47"
         android:layout_width="0dp"
-        android:layout_height="50dp"
-        app:penMinWidth="2dp"
-        app:penMaxWidth="2dp"
+        android:layout_height="55dp"
+        app:penMinWidth="1dp"
+        app:penMaxWidth="1dp"
         app:velocityFilterWeight="0.9"
-        android:visibility="gone" />
+        android:visibility="visible"
+        android:layout_marginBottom="9dp"
+        android:layout_marginRight="7dp"/>
 </LinearLayout>
 </RelativeLayout>
 </LinearLayout>

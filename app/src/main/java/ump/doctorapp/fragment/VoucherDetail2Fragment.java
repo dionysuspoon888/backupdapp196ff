@@ -51,7 +51,12 @@ public class VoucherDetail2Fragment extends BaseFragment {
         View v = inflater.inflate(R.layout.fragment_voucherdetail2,container,false);
         b_evoucher_scan = v.findViewById(R.id.b_evoucher_scan);
         iv_evoucher_scan = v.findViewById(R.id.iv_evoucher_scan);
+        Log.i("1999",""+GlobalConstants.eVoucherDataTreeMap.get("0"));
+
         iv_evoucher_scan.setImageBitmap(GlobalConstants.eVoucherDataTreeMap.get("0"));
+
+
+
 
         b_evoucher_scan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,29 +72,7 @@ public class VoucherDetail2Fragment extends BaseFragment {
 
 
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           @NonNull String permissions[], @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case REQUEST_EXTERNAL_STORAGE: {
-                // If request is cancelled, the result arrays are empty.
 
-                Log.i("56123","I am in onRequestPermissionsResult");
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                    Toast.makeText(getActivity(), "SSSSSSSSSSSSSSSSSSSSSS", Toast.LENGTH_SHORT).show();
-                    Log.i("56123","I am in onRequestPermissionsResult SS");
-
-                } else {
-
-                    Toast.makeText(getActivity(), "Cannot write images to external storage", Toast.LENGTH_SHORT).show();
-                    Log.i("56123","I am in onRequestPermissionsResult FF");
-                }
-                return;
-
-            }
-        }
-    }
 
 
     /**
@@ -115,10 +98,13 @@ public class VoucherDetail2Fragment extends BaseFragment {
 //            Toast.makeText(getActivity(), "SSSSSSSSSSSSSSSSSSSSSS", Toast.LENGTH_SHORT).show();
 
             if (addSignatureToGallery(GlobalConstants.eVoucherDataTreeMap.get("0"))) {
-                    Toast.makeText(getActivity(), "eVoucher saved into the Gallery", Toast.LENGTH_SHORT).show();
+
+                String doctorapp_scanss = getString(R.string.doctorapp_scanss);
+                Toast.makeText(getActivity(), doctorapp_scanss, Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getActivity(),VoucherActivity.class));
                     } else {
-                        // Toast.makeText(getBaseContext(), "Unable to store the signature", Toast.LENGTH_SHORT).show();
+                String doctorapp_scanff = getString(R.string.doctorapp_scanff);
+                Toast.makeText(getActivity(), doctorapp_scanff, Toast.LENGTH_SHORT).show();
                     }
         }
     }
@@ -216,5 +202,6 @@ public class VoucherDetail2Fragment extends BaseFragment {
         // iv_testing.setImageBitmap(decodedByte);
         return base64Image;
     }
+
 
 }

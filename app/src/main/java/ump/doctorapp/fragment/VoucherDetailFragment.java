@@ -202,18 +202,31 @@ public class VoucherDetailFragment extends BaseFragment {
     }
 
     public Bitmap takeScreenShot(View view) {
+        Log.i("takeScreenShot","Running");
         // configuramos para que la view almacene la cache en una imagen
         view.setDrawingCacheEnabled(true);
-        view.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
+        view.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_AUTO);
+
+        //fix view.getDrawingCache null in small screen size(480*800)
+        // this is the important code :)
+        // Without it the view will have a dimension of 0,0 and the bitmap will be null
+        view.measure(View.MeasureSpec.makeMeasureSpec(GlobalConstants.width, View.MeasureSpec.EXACTLY),
+                View.MeasureSpec.makeMeasureSpec(GlobalConstants.height, View.MeasureSpec.EXACTLY));
+        view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+
         view.buildDrawingCache();
 
-        if(view.getDrawingCache() == null) return null; // Verificamos antes de que no sea null
+        if(view.getDrawingCache() == null) {
+            Log.i("takeScreenShot","view.getDrawingCache() == null");
+            return null; // Verificamos antes de que no sea null
+        }
 
         // utilizamos esa cache, para crear el bitmap que tendra la imagen de la view actual
         Bitmap snapshot = Bitmap.createBitmap(view.getDrawingCache());
         view.setDrawingCacheEnabled(false);
         view.destroyDrawingCache();
 
+        Log.i("takeScreenShot","snapshot");
         return snapshot;
     }
 

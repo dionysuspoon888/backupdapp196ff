@@ -49,6 +49,9 @@ public class BaseFragment extends Fragment {
 
     }
 
+
+
+
     //start the fragment without back stack (if clicked back, it would not go back to this fragment)
     public static void startFrag(int container, Fragment fragment, FragmentManager fm) {
 
@@ -242,9 +245,10 @@ public class BaseFragment extends Fragment {
 
     }
 
+    //JPG would be black for trasparent image. PNG (alpha is compatiable)
     public String BitmapToBase64(Bitmap bitmap){
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
         byte[] byteArray = byteArrayOutputStream .toByteArray();
         String encodedString = Base64.encodeToString(byteArray, Base64.DEFAULT);
         return encodedString;
