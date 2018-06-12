@@ -53,6 +53,7 @@ public class LoginFragment extends BaseFragment {
                   et_doctorapp_login_doctorcode.getText().toString().trim().toUpperCase().equals("G999") &&
                   et_doctorapp_login_password.getText().toString().trim().equals("123456Aa")){
                     startActivity(new Intent(getActivity(), MainActivity.class));
+                    getActivity().finish();
 
 
                 }else{

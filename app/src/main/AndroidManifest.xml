@@ -59,7 +59,7 @@
             android:name=".LoginActivity"
             android:theme="@style/Theme.AppCompat.Light"
             android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
+            android:launchMode="singleTop"/>
 
         <activity
             android:name=".MainActivity"

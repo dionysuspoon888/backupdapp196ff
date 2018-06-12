@@ -35,7 +35,6 @@
                 android:id="@+id/b_evoucher_scan"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
-                android:layout_toRightOf="@+id/clear_button"
                 android:background="@drawable/ump_normal_btn"
                 android:text="@string/doctorapp_scan_evoucher"
                 />
