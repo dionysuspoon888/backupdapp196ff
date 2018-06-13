@@ -32,6 +32,14 @@ public class GlobalConstants {
     //Current Location
     public static String Location = "";
 
+    //Hawk Key for Login Saving
+
+    public static final String doctorSignTemplateKey = "DoctorSignTemplateKey";
+    public static final String useDoctorSignTemplateStatusKey = "useDoctorSignTemplateStatusKey";
+    public static final String clinicCodeKey = "clinicCodeKey";
+    public static final String doctorCodeKey = "doctorCodeKey";
+    public static final String passwordKey = "passwordKey";
+    public static final String checkBoxKey = "checkBoxKey";
     /////
     //For doctorapp eVoucher
     public static TreeMap<String,Bitmap> eVoucherDataTreeMap = new TreeMap<>();
@@ -59,14 +67,14 @@ public class GlobalConstants {
     public static TreeMap<String,String> eSignatureTable = new TreeMap<>();
     public static Hashtable<String,String> signingDateTable = new Hashtable<>();
 
-    //Hawk Key for Login Saving
+   //Take Photo
+    public static Bitmap photoBitmap;
+    public static ArrayList<UploadPhotoData> UploadPhotoDataList = new ArrayList<>();
+    public static int PhotoHistoryClickedPosition = 0;
+    public static int takePhotoCount = 0;
 
-    public static final String doctorSignTemplateKey = "DoctorSignTemplateKey";
-    public static final String useDoctorSignTemplateStatusKey = "useDoctorSignTemplateStatusKey";
-    public static final String clinicCodeKey = "clinicCodeKey";
-    public static final String doctorCodeKey = "doctorCodeKey";
-    public static final String passwordKey = "passwordKey";
-    public static final String checkBoxKey = "checkBoxKey";
+
+
 
 
 }

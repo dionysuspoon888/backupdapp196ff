@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+<LinearLayout
+    android:id="@+id/ll_doctorapp_photo_top"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/b_doctorapp_takephoto"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:text="Take Photo"
+        android:background="@drawable/ump_normal_btn"
+        />
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/b_doctorapp_chooseimagefile"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:text="Choose Image file"
+        android:background="@drawable/ump_normal_btn"/>
+    </LinearLayout>
+
+</LinearLayout>
+
+
+    <ImageView
+        android:layout_marginTop="12dp"
+        android:id="@+id/iv_doctorapp_imagechosen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_doctorapp_photo_top"
+        android:layout_above="@+id/ll_doctorapp_photo_bottom" />
+
+    <LinearLayout
+        android:id="@+id/ll_doctorapp_photo_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        >
+        <ProgressBar
+            android:id="@+id/pb_doctorapp_photo"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+             />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:passwordToggleEnabled="false"
+            app:hintTextAppearance ="@style/TextInputHint"
+            android:visibility="gone">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/et_doctorapp_photo_name"
+                style="@style/textview_black"
+                android:hint="Enter Photo Name"
+                android:maxLines="1"
+                android:scrollHorizontally="true"
+                android:drawablePadding="10dp"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/inputtext_access_code_text_back"
+                android:ellipsize="end"
+                android:maxLength="20"
+                android:imeOptions="actionDone"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="13dp"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:passwordToggleEnabled="false"
+            app:hintTextAppearance ="@style/TextInputHint">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/et_doctorapp_photo_remark"
+                style="@style/textview_black"
+                android:hint="Enter Remark"
+                android:maxLines="1"
+                android:scrollHorizontally="true"
+                android:drawablePadding="10dp"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/inputtext_access_code_text_back"
+                android:ellipsize="end"
+                android:maxLength="20"
+                android:imeOptions="actionDone"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="13dp"
+                android:layout_marginBottom="12dp"
+                />
+        </android.support.design.widget.TextInputLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+        <Button
+            android:id="@+id/b_doctorapp_photo_upload"
+            android:layout_width="80dp"
+            android:layout_height="45dp"
+            android:text="Upload"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/ump_normal_btn"/>
+        <TextView
+            android:id="@+id/tv_doctorapp_photo_showuploads"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/b_doctorapp_photo_upload"
+            android:layout_alignTop="@+id/b_doctorapp_photo_upload"
+            android:layout_marginStart="25dp"
+            android:layout_toEndOf="@+id/b_doctorapp_photo_upload"
+            android:gravity="center"
+            android:text="Show Uploads"
+            android:textSize="16sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+</RelativeLayout>

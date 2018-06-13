@@ -210,9 +210,11 @@ public class VoucherDetailFragment extends BaseFragment {
         //fix view.getDrawingCache null in small screen size(480*800)
         // this is the important code :)
         // Without it the view will have a dimension of 0,0 and the bitmap will be null
-        view.measure(View.MeasureSpec.makeMeasureSpec(GlobalConstants.width, View.MeasureSpec.EXACTLY),
-                View.MeasureSpec.makeMeasureSpec(GlobalConstants.height, View.MeasureSpec.EXACTLY));
-        view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+        if(GlobalConstants.width <= 480 && GlobalConstants.height <= 800) {
+            view.measure(View.MeasureSpec.makeMeasureSpec(GlobalConstants.width, View.MeasureSpec.EXACTLY),
+                    View.MeasureSpec.makeMeasureSpec(GlobalConstants.height, View.MeasureSpec.EXACTLY));
+            view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+        }
 
         view.buildDrawingCache();
 

@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.github.gcacace.signaturepad.views.SignaturePad;
@@ -32,11 +33,15 @@ public class DoctorSignTemplateFragment extends BaseFragment {
     public Button b_doctorsign_template_submit_button;
     public Boolean doctorsignsStatus;
 
+    public ImageView iv_doctorapp_doctorsigntemplate;
+
 
     //m
     private Bitmap bitmap;
 
     private Canvas canvas;
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -47,6 +52,12 @@ public class DoctorSignTemplateFragment extends BaseFragment {
         b_doctorsign_template_signature_pad = v.findViewById(R.id.b_doctorsign_template_signature_pad);
         b_doctorsign_template_clear_button = v.findViewById(R.id.b_doctorsign_template_clear_button);
         b_doctorsign_template_submit_button = v.findViewById(R.id.b_doctorsign_template_submit_button);
+        iv_doctorapp_doctorsigntemplate = v.findViewById(R.id.iv_doctorapp_doctorsigntemplate);
+
+        if(!(Hawk.get(GlobalConstants.doctorSignTemplateKey) == null)) {
+            iv_doctorapp_doctorsigntemplate.setImageBitmap(GlobalConstants.doctorSignTemplate);
+        }
+
 
         b_doctorsign_template_signature_pad.setOnSignedListener(new SignaturePad.OnSignedListener() {
             @Override
@@ -84,8 +95,9 @@ public class DoctorSignTemplateFragment extends BaseFragment {
                     if(b_doctorsign_template_signature_pad.getSignatureBitmap() != null) {
 
                         GlobalConstants.doctorSignTemplate = b_doctorsign_template_signature_pad.getTransparentSignatureBitmap();
-
                         Hawk.put(GlobalConstants.doctorSignTemplateKey, BitmapToBase64(GlobalConstants.doctorSignTemplate));
+
+                        iv_doctorapp_doctorsigntemplate.setImageBitmap(GlobalConstants.doctorSignTemplate);
                     }
                     GlobalConstants.useDoctorSignTemplate = true;
 

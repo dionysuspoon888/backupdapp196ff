@@ -94,6 +94,39 @@
             android:theme="@style/Theme.AppCompat.Light"
             android:screenOrientation="portrait"
          />
+        <activity
+            android:name=".UploadDocumentPhotoActivity"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".UploadPhotoActivity"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".UploadPhotoHistoryActivity"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".UploadPhotoDetailActivity"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:screenOrientation="portrait"
+            />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="ump.doctorapp.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
     </application>
 
 

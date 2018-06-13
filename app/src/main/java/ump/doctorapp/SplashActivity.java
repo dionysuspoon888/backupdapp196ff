@@ -104,5 +104,11 @@ public class SplashActivity extends BaseActivity {
 
         GlobalConstants.eSignatureTable = new TreeMap<>();
         GlobalConstants.signingDateTable = new Hashtable<>();
+
+        GlobalConstants.photoBitmap = null;
+        GlobalConstants.UploadPhotoDataList = new ArrayList<>();
+        GlobalConstants.PhotoHistoryClickedPosition = 0;
+        GlobalConstants.takePhotoCount = 0;
+
     }
 }

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    android:orientation="vertical">
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -68,124 +67,75 @@
         </RelativeLayout>
 
 
+        <TextView
+            android:id="@+id/tv_language"
+            style="@style/textview_black_small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_marginTop="28dp"
+            android:paddingRight="@dimen/padding_medium"
+            android:text="@string/language_switch_text"
+            android:textSize="@dimen/font_size_very_small" />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_height="60dp"
+            android:layout_marginTop="6dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-
-                android:orientation="horizontal">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="bottom|center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/tv_language"
-                        style="@style/textview_black_small"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:paddingRight="@dimen/padding_medium"
-                        android:text="@string/language_switch_text"
-                        android:textSize="@dimen/font_size_very_small" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-
+            <RadioGroup
+                android:id="@+id/main_language_group"
+                android:layout_width="120dp"
+                android:layout_height="@dimen/language_btn_height"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/language_en_btn"
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <RadioGroup
-                    android:id="@+id/main_language_group"
-                    android:layout_width="120dp"
-                    android:layout_height="@dimen/language_btn_height"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/language_en_btn"
+                <ump.doctorapp.util.CustomRadioButton
+                    android:id="@+id/access_code_language_zh"
+                    style="@style/textview_white_very_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:checked="true"
                     android:gravity="center"
-                    android:orientation="horizontal">
+                    android:text="@string/language_zh" />
 
-                    <ump.doctorapp.util.CustomRadioButton
-                        android:id="@+id/access_code_language_zh"
-                        style="@style/textview_white_very_small"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@android:color/transparent"
-                        android:checked="true"
-                        android:gravity="center"
-                        android:text="@string/language_zh" />
-
-                    <ump.doctorapp.util.CustomRadioButton
-                        android:id="@+id/access_code_language_en"
-                        style="@style/textview_white_very_small"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@android:color/transparent"
-                        android:checked="false"
-                        android:gravity="center"
-                        android:text="@string/language_en" />
-                </RadioGroup>
-
-            </LinearLayout>
+                <ump.doctorapp.util.CustomRadioButton
+                    android:id="@+id/access_code_language_en"
+                    style="@style/textview_white_very_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:text="@string/language_en" />
+            </RadioGroup>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/tv_use_doctorsignature_template"
+                style="@style/textview_black_small"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="bottom|center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/tv_use_doctorsignature_template"
-                        style="@style/textview_black_small"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:paddingRight="@dimen/padding_medium"
-                        android:text="@string/doctorapp_doctor_use_doctorsignature_template"
-                        android:textSize="@dimen/font_size_very_small" />
-                </LinearLayout>
-
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:paddingRight="@dimen/padding_medium"
+                android:text="@string/doctorapp_doctor_use_doctorsignature_template"
+                android:textSize="@dimen/font_size_very_small" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-
-                android:gravity="center"
+                android:gravity="center_horizontal|center_vertical"
                 android:orientation="horizontal">
-
 
                 <RadioGroup
                     android:id="@+id/rg_doctorapp_usedoctorsignaturetemplate"
@@ -219,66 +169,17 @@
                         android:gravity="center"
                         android:text="@string/doctorapp_doctor_use_doctorsignature_no" />
                 </RadioGroup>
-
             </LinearLayout>
 
-        </LinearLayout>
-
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/ump_version_num"
+            style="@style/textview_black_small"
+            android:layout_marginTop="38dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.6"
-            android:orientation="vertical"
-            >
-            <LinearLayout
-                android:id="@+id/ll_setting_displayqrcode"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center">
-                <TextView
-                    android:id="@+id/tv_membercard_setting_qrcodename"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="@style/textview_black_small"
-                    android:paddingRight="@dimen/padding_medium"
-                    android:text="@string/membercard_setting_memberqrcode"
-                    android:gravity="center"
-                    android:visibility="gone"
-                    />
-                <ImageView
-                    android:id="@+id/iv_membercard_qrcode"
-                    android:layout_width="180dp"
-                    android:layout_height="180dp"
-                    android:layout_gravity="center"
-                    android:paddingBottom="15dp"
-                    android:paddingTop="15dp"
-                    android:src="@drawable/ump_doctor_star"
-                    android:visibility="invisible"/>
-                <Button
-                    android:id="@+id/b_setting_logout_real"
-                    android:layout_margin="8dp"
-                    android:layout_width="120dp"
-                    android:layout_height="40dp"
-                    android:background="@drawable/ump_normal_btn"
-                    android:text="@string/membercard_setting_logout_real"
-                    android:visibility="gone"
-                    />
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/ump_version_num"
-                style="@style/textview_black_small"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:gravity="center"
-                android:paddingRight="@dimen/padding_small"
-                android:text="@string/ump_version_num" />
-
-        </LinearLayout>
+            android:layout_height="50dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:paddingRight="@dimen/padding_small"
+            android:text="@string/ump_version_num" />
 
 
 

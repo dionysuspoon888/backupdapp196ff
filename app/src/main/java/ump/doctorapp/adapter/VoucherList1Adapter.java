@@ -76,7 +76,7 @@ public class VoucherList1Adapter extends RecyclerView.Adapter<VoucherList1Adapte
             detailedArrow = itemView.findViewById(R.id.check_voucher1_detail_arrow);
 
 
-
+//
 
 
             detailedArrow.setOnClickListener(new View.OnClickListener() {

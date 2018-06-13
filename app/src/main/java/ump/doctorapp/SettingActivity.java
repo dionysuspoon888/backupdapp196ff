@@ -69,7 +69,7 @@ public class SettingActivity extends BaseActivity {
 
     public Button back_btn;
 
-    public Button b_setting_logout_real;
+   // public Button b_setting_logout_real;
 
     public boolean useDoctorSignTemplate = false;
 
@@ -110,7 +110,8 @@ public class SettingActivity extends BaseActivity {
         tv_language = findViewById(R.id.tv_language);
         tv_use_doctorsignature_template = findViewById(R.id.tv_use_doctorsignature_template);
         back_btn = findViewById(R.id.back_btn);
-        b_setting_logout_real = findViewById(R.id.b_setting_logout_real);
+
+        // b_setting_logout_real = findViewById(R.id.b_setting_logout_real);
         tv_membercard_toptitle = findViewById(R.id.tv_membercard_toptitle);
 
         access_code_language_zh.setButtonDrawable(new ColorDrawable(
@@ -208,13 +209,13 @@ public class SettingActivity extends BaseActivity {
 
 
 
-        b_setting_logout_real.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getBaseContext(),LoginActivity.class));
-                finish();
-            }
-        });
+//        b_setting_logout_real.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(getBaseContext(),LoginActivity.class));
+//                finish();
+//            }
+//        });
 
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -320,7 +321,7 @@ public class SettingActivity extends BaseActivity {
         try {
             tv_language.setText(R.string.language_switch_text);
             tv_use_doctorsignature_template.setText(R.string.doctorapp_doctor_use_doctorsignature_template);
-            b_setting_logout_real.setText(R.string.membercard_setting_logout_real);
+            //b_setting_logout_real.setText(R.string.membercard_setting_logout_real);
             tv_membercard_toptitle.setText(R.string.doctorapp_setting_title);
         }catch (NullPointerException e){
             e.printStackTrace();
