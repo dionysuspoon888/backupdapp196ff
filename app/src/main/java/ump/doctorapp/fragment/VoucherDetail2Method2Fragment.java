@@ -11,7 +11,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.NonNull;
+import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.v13.app.ActivityCompat;
 import android.util.Base64;
@@ -21,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
@@ -32,35 +33,35 @@ import java.io.OutputStreamWriter;
 
 import ump.doctorapp.R;
 import ump.doctorapp.VoucherActivity;
-import ump.doctorapp.VoucherDetail2Activity;
+import ump.doctorapp.VouchereSignatureActivity;
 import ump.doctorapp.model.GlobalConstants;
 
 /**
- * Created by Dionysus.Poon on 8/6/2018.
+ * Created by Dionysus.Poon on 14/6/2018.
  */
 
-public class VoucherDetail2Fragment extends BaseFragment {
+public class VoucherDetail2Method2Fragment extends BaseFragment {
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
     private static String[] PERMISSIONS_STORAGE = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
-    public ImageView iv_evoucher_scan;
-    public Button b_evoucher_scan;
-
-
+    ImageView iv_doctorapp_patientsignature;
+    ImageView iv_doctorapp_doctorsignature;
+    Button b_evoucher_submit;
+    LinearLayout ll_evoucher_scan;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_voucherdetail2,container,false);
-        b_evoucher_scan = v.findViewById(R.id.b_evoucher_scan);
-        iv_evoucher_scan = v.findViewById(R.id.iv_evoucher_scan);
-        Log.i("1999",""+GlobalConstants.eVoucherDataTreeMap.get("0"));
+        View v = inflater.inflate(R.layout.fragment_voucherdetail2method2,container,false);
+        iv_doctorapp_patientsignature = v.findViewById(R.id.iv_doctorapp_patientsignature);
+        iv_doctorapp_doctorsignature = v.findViewById(R.id.iv_doctorapp_doctorsignature);
+        b_evoucher_submit = v.findViewById(R.id.b_evoucher_submit);
+        ll_evoucher_scan = v.findViewById(R.id.ll_evoucher_scan);
 
-        iv_evoucher_scan.setImageBitmap(GlobalConstants.eVoucherDataTreeMap.get("0"));
+        iv_doctorapp_patientsignature.setImageBitmap(GlobalConstants.eVoucherPatientSignatureTreeMap.get("0"));
+        iv_doctorapp_doctorsignature.setImageBitmap(GlobalConstants.eVoucherDoctorSignatureTreeMap.get("0"));
+       GlobalConstants.eVoucherMethod2SnapShot =  takeScreenShot(ll_evoucher_scan);
 
-
-
-
-        b_evoucher_scan.setOnClickListener(new View.OnClickListener() {
+        b_evoucher_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 verifyStoragePermissions(getActivity());
@@ -70,12 +71,6 @@ public class VoucherDetail2Fragment extends BaseFragment {
 
         return v;
     }
-
-
-
-
-
-
 
     /**
      * Checks if the app has permission to write to device storage
@@ -99,31 +94,46 @@ public class VoucherDetail2Fragment extends BaseFragment {
 //            Log.i("56123","I am in verifyStoragePermissions SS");
 //            Toast.makeText(getActivity(), "SSSSSSSSSSSSSSSSSSSSSS", Toast.LENGTH_SHORT).show();
 
-            if (addSignatureToGallery(GlobalConstants.eVoucherDataTreeMap.get("0"))) {
+            if (addSignatureToGallery(GlobalConstants.eVoucherMethod2SnapShot)) {
 
                 String doctorapp_scanss = getString(R.string.doctorapp_scanss);
                 Toast.makeText(getActivity(), doctorapp_scanss, Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getActivity(),VoucherActivity.class));
-                    } else {
+                startActivity(new Intent(getActivity(),VoucherActivity.class));
+            } else {
                 String doctorapp_scanff = getString(R.string.doctorapp_scanff);
                 Toast.makeText(getActivity(), doctorapp_scanff, Toast.LENGTH_SHORT).show();
-                    }
+            }
         }
     }
 
     public Bitmap takeScreenShot(View view) {
+        Log.i("takeScreenShot","Running");
         // configuramos para que la view almacene la cache en una imagen
         view.setDrawingCacheEnabled(true);
-        view.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
+        view.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_AUTO);
+
+        //fix view.getDrawingCache null in small screen size(480*800)
+        // this is the important code :)
+        // Without it the view will have a dimension of 0,0 and the bitmap will be null
+        if(GlobalConstants.width <= 480 && GlobalConstants.height <= 800) {
+            view.measure(View.MeasureSpec.makeMeasureSpec(GlobalConstants.width, View.MeasureSpec.EXACTLY),
+                    View.MeasureSpec.makeMeasureSpec(GlobalConstants.height, View.MeasureSpec.EXACTLY));
+            view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+        }
+
         view.buildDrawingCache();
 
-        if(view.getDrawingCache() == null) return null; // Verificamos antes de que no sea null
+        if(view.getDrawingCache() == null) {
+            Log.i("takeScreenShot","view.getDrawingCache() == null");
+            return null; // Verificamos antes de que no sea null
+        }
 
         // utilizamos esa cache, para crear el bitmap que tendra la imagen de la view actual
         Bitmap snapshot = Bitmap.createBitmap(view.getDrawingCache());
         view.setDrawingCacheEnabled(false);
         view.destroyDrawingCache();
 
+        Log.i("takeScreenShot","snapshot");
         return snapshot;
     }
 
@@ -204,6 +214,4 @@ public class VoucherDetail2Fragment extends BaseFragment {
         // iv_testing.setImageBitmap(decodedByte);
         return base64Image;
     }
-
-
 }

@@ -174,19 +174,6 @@ public class VoucherDetailFragment extends BaseFragment {
                    Toast.makeText(getActivity().getBaseContext(), eSignatureSubmit, Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getActivity(), VoucherActivity.class));
 
-                    //m
-//                    if (addSignatureToGallery(takeScreenShot(ll_evoucher_scan))) {
-//                        Toast.makeText(getActivity(), "Signature saved into the Gallery", Toast.LENGTH_SHORT).show();
-//                    } else {
-//                        // Toast.makeText(getBaseContext(), "Unable to store the signature", Toast.LENGTH_SHORT).show();
-//                    }
-
-//                if (addSvgSignatureToGallery(mSignaturePad.getSignatureSvg())) {
-//                    Toast.makeText(MainActivity.this, "SVG Signature saved into the Gallery", Toast.LENGTH_SHORT).show();
-//                } else {
-//                    Toast.makeText(MainActivity.this, "Unable to store the SVG signature", Toast.LENGTH_SHORT).show();
-//                }
-
                 }else{
                     String tmpeSignaturePleaseSign = "請簽署";
                     if (isAdded()) {

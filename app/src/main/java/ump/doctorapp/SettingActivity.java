@@ -52,6 +52,12 @@ public class SettingActivity extends BaseActivity {
     public CustomRadioButton rb_doctorapp_usedoctorsignaturetemplate_no;
 
 
+    public RadioGroup rg_doctorapp_signmethod;
+    public CustomRadioButton rb_doctorapp_signmethod1;
+    public CustomRadioButton rb_doctorapp_signmethod2;
+
+
+
     private TextView ump_version_num;
 
     public static boolean cur_language_zh = true;
@@ -72,8 +78,11 @@ public class SettingActivity extends BaseActivity {
    // public Button b_setting_logout_real;
 
     public boolean useDoctorSignTemplate = false;
+    public boolean useSignatureMethod = true;
 
     public TextView tv_membercard_toptitle;
+
+
 
 
     @Override
@@ -91,6 +100,11 @@ public class SettingActivity extends BaseActivity {
           useDoctorSignTemplate = false;
       }
 
+        if(!(Hawk.get(GlobalConstants.useeSignMethodKey) == null)) {
+            useSignatureMethod = Hawk.get(GlobalConstants.useeSignMethodKey);
+        }else{
+            useSignatureMethod = true;
+        }
 
         sdk_version = android.os.Build.VERSION.SDK_INT;
 
@@ -104,6 +118,12 @@ public class SettingActivity extends BaseActivity {
         rg_doctorapp_usedoctorsignaturetemplate = findViewById(R.id.rg_doctorapp_usedoctorsignaturetemplate);
         rb_doctorapp_usedoctorsignaturetemplate_yes = findViewById(R.id.rb_doctorapp_usedoctorsignaturetemplate_yes);
         rb_doctorapp_usedoctorsignaturetemplate_no = findViewById(R.id.rb_doctorapp_usedoctorsignaturetemplate_no);
+
+
+        rg_doctorapp_signmethod = findViewById(R.id.rg_doctorapp_signmethod);
+        rb_doctorapp_signmethod1 = findViewById(R.id.rb_doctorapp_signmethod1);
+        rb_doctorapp_signmethod2 = findViewById(R.id.rb_doctorapp_signmethod2);
+
 
         ump_version_num = findViewById(R.id.ump_version_num);
 
@@ -155,6 +175,17 @@ public class SettingActivity extends BaseActivity {
             setShowTutorial(cur_show_tutorial_zh);
         }
 
+        if (useSignatureMethod)  {
+            // TODO
+            rb_doctorapp_signmethod1.startAnimation(CustomRadioButton.alpha_to_half);
+            setUseeSignatureMethod(useSignatureMethod);
+
+        } else {
+            // TODO
+            rb_doctorapp_signmethod2.startAnimation(CustomRadioButton.alpha_to_half);
+            setUseeSignatureMethod(useSignatureMethod);
+        }
+
 
         access_code_language_zh.setOnClickListener(v -> {
 
@@ -180,7 +211,7 @@ public class SettingActivity extends BaseActivity {
 
                     GlobalConstants.useDoctorSignTemplate = true;
                     Hawk.put(GlobalConstants.useDoctorSignTemplateStatusKey, GlobalConstants.useDoctorSignTemplate);
-
+//
                     setShowTutorial(cur_show_tutorial_zh);
 
                     Log.i(TAG, "SettingActivity show_tutorial_zh.setOnClickListener");
@@ -206,6 +237,29 @@ public class SettingActivity extends BaseActivity {
                 Log.i(TAG, "SettingActivity show_tutorial_en.setOnClickListener");
             }
         });
+
+        rb_doctorapp_signmethod1.setOnClickListener(v -> {
+
+                    useSignatureMethod = true;
+
+                    Hawk.put(GlobalConstants.useeSignMethodKey, useSignatureMethod);
+
+                    setUseeSignatureMethod(useSignatureMethod);
+
+
+        });
+
+        rb_doctorapp_signmethod2.setOnClickListener(v -> {
+
+            useSignatureMethod = false;
+
+            Hawk.put(GlobalConstants.useeSignMethodKey, useSignatureMethod);
+
+            setUseeSignatureMethod(useSignatureMethod);
+
+
+        });
+
 
 
 
@@ -305,6 +359,23 @@ public class SettingActivity extends BaseActivity {
             rb_doctorapp_usedoctorsignaturetemplate_no.startAnimation(CustomRadioButton.alpha_to_normal);
         }
     }
+
+
+    private void setUseeSignatureMethod(boolean useSignMethod) {
+        if (useSignMethod) {
+            rg_doctorapp_signmethod
+                    .setBackgroundResource(R.drawable.language_zh_btn);
+            rb_doctorapp_signmethod1.startAnimation(CustomRadioButton.alpha_to_normal);
+            rb_doctorapp_signmethod2.startAnimation(CustomRadioButton.alpha_to_half);
+
+        }else{
+            rg_doctorapp_signmethod
+                    .setBackgroundResource(R.drawable.language_en_btn);
+            rb_doctorapp_signmethod1.startAnimation(CustomRadioButton.alpha_to_half);
+            rb_doctorapp_signmethod2.startAnimation(CustomRadioButton.alpha_to_normal);
+        }
+    }
+
 
 
     private void refreshUI(boolean isChinese) {

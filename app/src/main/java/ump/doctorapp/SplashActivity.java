@@ -46,6 +46,10 @@ public class SplashActivity extends BaseActivity {
         }
 
 
+        if(Hawk.get(GlobalConstants.useeSignMethodKey) == null) {
+          Hawk.put(GlobalConstants.useeSignMethodKey,true);
+        }
+
 
 
         // Decide which screen to be shown on launch

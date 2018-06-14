@@ -171,6 +171,62 @@
                 </RadioGroup>
             </LinearLayout>
 
+
+
+        <TextView
+
+            android:id="@+id/tv_doctorapp_signmethod"
+            style="@style/textview_black_small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:paddingRight="@dimen/padding_medium"
+            android:text="Use eSignature Method"
+            android:textSize="@dimen/font_size_very_small" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="horizontal">
+
+            <RadioGroup
+
+                android:id="@+id/rg_doctorapp_signmethod"
+                android:layout_width="120dp"
+                android:layout_height="@dimen/language_btn_height"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/language_en_btn"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ump.doctorapp.util.CustomRadioButton
+
+                    android:id="@+id/rb_doctorapp_signmethod1"
+                    style="@style/textview_white_very_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="A" />
+
+                <ump.doctorapp.util.CustomRadioButton
+
+                    android:id="@+id/rb_doctorapp_signmethod2"
+                    style="@style/textview_white_very_small"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:text="B" />
+            </RadioGroup>
+        </LinearLayout>
+
         <TextView
             android:id="@+id/ump_version_num"
             style="@style/textview_black_small"

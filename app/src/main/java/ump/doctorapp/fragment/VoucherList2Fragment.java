@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.orhanobut.hawk.Hawk;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -24,6 +26,9 @@ import java.util.List;
 
 import ump.doctorapp.R;
 import ump.doctorapp.VoucherDetail2Activity;
+import ump.doctorapp.VoucherDetail2Method2Activity;
+import ump.doctorapp.VoucherDetailActivity;
+import ump.doctorapp.VoucherDetailMethod2Activity;
 import ump.doctorapp.adapter.VoucherList2Adapter;
 import ump.doctorapp.model.GlobalConstants;
 import ump.doctorapp.model.Voucher1Data;
@@ -56,8 +61,15 @@ public class VoucherList2Fragment extends BaseFragment  implements VoucherList2A
         VoucherListView1.setAdapter(new VoucherListView2Adapter(getActivity(), Voucher2List));
         VoucherListView1.setOnItemClickListener((adapterView, view, i, l) -> {
 
-            Intent intent = new Intent(getActivity(), VoucherDetail2Activity.class);
-            startActivity(intent);
+            if(Hawk.get(GlobalConstants.useeSignMethodKey)) {
+                Intent intent = new Intent(getActivity(), VoucherDetail2Activity.class);
+                startActivity(intent);
+            }else{
+                Intent intent = new Intent(getActivity(), VoucherDetail2Method2Activity.class);
+                startActivity(intent);
+            }
+
+
 
 
         });

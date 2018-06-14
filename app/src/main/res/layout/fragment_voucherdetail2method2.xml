@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_weight="1"
+        android:scrollbars="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal" >
+            <LinearLayout
+                android:id="@+id/ll_evoucher_scan"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/topesignature" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_evouchersign"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/esignatureupdated" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/buttons_container"
+                    android:id="@+id/signature_pad_container">
+                    <FrameLayout
+                        android:id="@+id/signature_pad_linebordertop"
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:layout_alignParentTop="true"
+                        android:background="@android:color/darker_gray" />
+                    <FrameLayout
+                        android:id="@+id/signature_pad_lineborderleft"
+                        android:layout_width="2dp"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentLeft="true"
+                        android:background="@android:color/darker_gray" />
+                    <FrameLayout
+                        android:id="@+id/signature_pad_lineborderright"
+                        android:layout_width="2dp"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@android:color/darker_gray" />
+                    <FrameLayout
+                        android:id="@+id/signature_pad_lineborderbottom"
+                        android:layout_width="fill_parent"
+                        android:layout_height="2dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@android:color/darker_gray" />
+                    <TextView
+                        android:text="Patient Signature"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        />
+
+                    <ImageView
+                        android:id="@+id/iv_doctorapp_patientsignature"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                     />
+                </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/buttons_container"
+                        android:id="@+id/signature2_pad_container">
+                        <FrameLayout
+                            android:id="@+id/signature2_pad_linebordertop"
+                            android:layout_width="fill_parent"
+                            android:layout_height="2dp"
+                            android:layout_alignParentTop="true"
+                            android:background="@android:color/darker_gray" />
+                        <FrameLayout
+                            android:id="@+id/signature2_pad_lineborderleft"
+                            android:layout_width="2dp"
+                            android:layout_height="fill_parent"
+                            android:layout_alignParentLeft="true"
+                            android:background="@android:color/darker_gray" />
+                        <FrameLayout
+                            android:id="@+id/signature2_pad_lineborderright"
+                            android:layout_width="2dp"
+                            android:layout_height="fill_parent"
+                            android:layout_alignParentRight="true"
+                            android:background="@android:color/darker_gray" />
+                        <FrameLayout
+                            android:id="@+id/signature2_pad_lineborderbottom"
+                            android:layout_width="fill_parent"
+                            android:layout_height="2dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@android:color/darker_gray" />
+                        <TextView
+                            android:text="Doctor Signature"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/iv_doctorapp_doctorsignature"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                        />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <Button
+                android:layout_marginTop="12dp"
+                android:id="@+id/b_evoucher_submit"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_toRightOf="@+id/clear_button"
+                android:background="@drawable/ump_normal_btn"
+                android:text="Scan"
+                />
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>

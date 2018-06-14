@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.orhanobut.hawk.Hawk;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -23,6 +25,7 @@ import java.util.List;
 
 import ump.doctorapp.R;
 import ump.doctorapp.VoucherDetailActivity;
+import ump.doctorapp.VoucherDetailMethod2Activity;
 import ump.doctorapp.adapter.VoucherList1Adapter;
 import ump.doctorapp.model.GlobalConstants;
 import ump.doctorapp.model.Voucher1Data;
@@ -56,9 +59,15 @@ public class VoucherList1Fragment extends BaseFragment implements VoucherList1Ad
             Voucher1Data voucher1 = (Voucher1Data) adapterView.getItemAtPosition(i);
             // handle item click for processs status
 
-            Intent intent = new Intent(getActivity(), VoucherDetailActivity.class);
+            if(Hawk.get(GlobalConstants.useeSignMethodKey)) {
+                Intent intent = new Intent(getActivity(), VoucherDetailActivity.class);
 
-            startActivity(intent);
+                startActivity(intent);
+            }else{
+                Intent intent = new Intent(getActivity(), VoucherDetailMethod2Activity.class);
+
+                startActivity(intent);
+            }
 
 
 

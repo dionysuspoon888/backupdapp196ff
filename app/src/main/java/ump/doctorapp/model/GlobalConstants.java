@@ -36,6 +36,7 @@ public class GlobalConstants {
 
     public static final String doctorSignTemplateKey = "DoctorSignTemplateKey";
     public static final String useDoctorSignTemplateStatusKey = "useDoctorSignTemplateStatusKey";
+    public static final String useeSignMethodKey = "useeSignMethodKey";
     public static final String clinicCodeKey = "clinicCodeKey";
     public static final String doctorCodeKey = "doctorCodeKey";
     public static final String passwordKey = "passwordKey";
@@ -47,6 +48,13 @@ public class GlobalConstants {
 
     public static Boolean useDoctorSignTemplate = false;
     public static Bitmap doctorSignTemplate;
+
+    //2
+    public static TreeMap<String,Bitmap> eVoucherPatientSignatureTreeMap = new TreeMap<>();
+    public static TreeMap<String,Bitmap> eVoucherDoctorSignatureTreeMap = new TreeMap<>();
+
+    public static Bitmap eVoucherMethod2SnapShot;
+
 
 
 

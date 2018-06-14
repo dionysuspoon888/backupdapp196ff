@@ -65,57 +65,60 @@
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-           />
+            android:screenOrientation="portrait"  />
         <activity
             android:name=".VoucherActivity"
             android:theme="@style/Theme.AppCompat.Light"
             android:screenOrientation="portrait"
-            android:launchMode="singleTop"
-            />
+            android:launchMode="singleTop"/>
         <activity
-            android:name=".VoucherDetailActivity"
+        android:name=".VoucherDetailActivity"
+        android:theme="@style/Theme.AppCompat.Light"
+        android:screenOrientation="portrait"/>
+        <activity
+            android:name=".VoucherDetailMethod2Activity"
             android:theme="@style/Theme.AppCompat.Light"
-            android:screenOrientation="portrait"
-           />
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VouchereSignatureActivity"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".VoucherDetail2Activity"
             android:theme="@style/Theme.AppCompat.Light"
-            android:screenOrientation="portrait"
-           />
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".VoucherDetail2Method2Activity"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".DoctorSignTemplateActivity"
             android:theme="@style/Theme.AppCompat.Light"
-            android:screenOrientation="portrait"
-       />
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".SettingActivity"
             android:theme="@style/Theme.AppCompat.Light"
-            android:screenOrientation="portrait"
-         />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".UploadDocumentPhotoActivity"
             android:theme="@style/Theme.AppCompat.Light"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".UploadPhotoActivity"
             android:theme="@style/Theme.AppCompat.Light"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".UploadPhotoHistoryActivity"
             android:theme="@style/Theme.AppCompat.Light"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".UploadPhotoDetailActivity"
             android:theme="@style/Theme.AppCompat.Light"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait"/>
+
 
         <provider
             android:name="android.support.v4.content.FileProvider"

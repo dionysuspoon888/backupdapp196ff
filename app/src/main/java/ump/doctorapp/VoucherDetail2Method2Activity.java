@@ -1,7 +1,5 @@
-package ump.doctorapp.fragment;
+package ump.doctorapp;
 
-import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -13,14 +11,9 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v13.app.ActivityCompat;
 import android.util.Base64;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
@@ -30,84 +23,57 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 
-import ump.doctorapp.R;
-import ump.doctorapp.VoucherActivity;
-import ump.doctorapp.VoucherDetail2Activity;
+import ump.doctorapp.fragment.VoucherDetail2Method2Fragment;
 import ump.doctorapp.model.GlobalConstants;
 
 /**
- * Created by Dionysus.Poon on 8/6/2018.
+ * Created by Dionysus.Poon on 14/6/2018.
  */
 
-public class VoucherDetail2Fragment extends BaseFragment {
+public class VoucherDetail2Method2Activity extends BaseActivity {
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
-    private static String[] PERMISSIONS_STORAGE = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
-
-    public ImageView iv_evoucher_scan;
-    public Button b_evoucher_scan;
 
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_voucherdetail2,container,false);
-        b_evoucher_scan = v.findViewById(R.id.b_evoucher_scan);
-        iv_evoucher_scan = v.findViewById(R.id.iv_evoucher_scan);
-        Log.i("1999",""+GlobalConstants.eVoucherDataTreeMap.get("0"));
-
-        iv_evoucher_scan.setImageBitmap(GlobalConstants.eVoucherDataTreeMap.get("0"));
-
-
-
-
-        b_evoucher_scan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                verifyStoragePermissions(getActivity());
-            }
-        });
-
-
-        return v;
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        startFrag(R.id.doctorapp_container,new VoucherDetail2Method2Fragment(),getFragmentManager());
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String permissions[], @NonNull int[] grantResults) {
 
 
+        Log.i("56123","I am in onRequestPermissionsResult");
+        switch (requestCode) {
+            case REQUEST_EXTERNAL_STORAGE: {
+                // If request is cancelled, the result arrays are empty.
+                Log.i("56123","I am in onRequestPermissionsResult REQUEST_EXTERNAL_STORAGE");
 
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
+                    Log.i("56123","I am in onRequestPermissionsResult SS");
 
+                    if (addSignatureToGallery(GlobalConstants.eVoucherMethod2SnapShot)) {
 
-    /**
-     * Checks if the app has permission to write to device storage
-     * <p/>
-     * If the app does not has permission then the user will be prompted to grant permissions
-     *
-     * @param activity the activity from which permissions are checked
-     */
-    public void verifyStoragePermissions(Activity activity) {
-        // Check if we have write permission
-        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-
-        if (permission != PackageManager.PERMISSION_GRANTED) {
-            // We don't have permission so prompt the user
-            ActivityCompat.requestPermissions(
-                    activity,
-                    PERMISSIONS_STORAGE,
-                    REQUEST_EXTERNAL_STORAGE
-            );
-        }else{
-//            Log.i("56123","I am in verifyStoragePermissions SS");
-//            Toast.makeText(getActivity(), "SSSSSSSSSSSSSSSSSSSSSS", Toast.LENGTH_SHORT).show();
-
-            if (addSignatureToGallery(GlobalConstants.eVoucherDataTreeMap.get("0"))) {
-
-                String doctorapp_scanss = getString(R.string.doctorapp_scanss);
-                Toast.makeText(getActivity(), doctorapp_scanss, Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getActivity(),VoucherActivity.class));
+                        String doctorapp_scanss = getString(R.string.doctorapp_scanss);
+                        Toast.makeText(this, doctorapp_scanss, Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(this,VoucherActivity.class));
                     } else {
-                String doctorapp_scanff = getString(R.string.doctorapp_scanff);
-                Toast.makeText(getActivity(), doctorapp_scanff, Toast.LENGTH_SHORT).show();
+                        String doctorapp_scanff = getString(R.string.doctorapp_scanff);
+                        Toast.makeText(this, doctorapp_scanff, Toast.LENGTH_SHORT).show();
                     }
+
+                } else {
+
+                    String doctorapp_scanff2 = getString(R.string.doctorapp_scanff2);
+                    Toast.makeText(this, doctorapp_scanff2, Toast.LENGTH_SHORT).show();
+                    Log.i("56123","I am in onRequestPermissionsResult FF");
+                }
+                return;
+
+            }
         }
     }
 
@@ -164,7 +130,7 @@ public class VoucherDetail2Fragment extends BaseFragment {
         Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
         Uri contentUri = Uri.fromFile(photo);
         mediaScanIntent.setData(contentUri);
-        getActivity().sendBroadcast(mediaScanIntent);
+        this.sendBroadcast(mediaScanIntent);
     }
 
     public boolean addSvgSignatureToGallery(String signatureSvg) {
@@ -204,6 +170,4 @@ public class VoucherDetail2Fragment extends BaseFragment {
         // iv_testing.setImageBitmap(decodedByte);
         return base64Image;
     }
-
-
 }
