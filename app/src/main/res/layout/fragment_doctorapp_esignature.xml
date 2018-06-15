@@ -127,20 +127,21 @@
             android:gravity="center_vertical|center_horizontal"
             />
 
+
+
         <LinearLayout
+            android:id="@+id/ll_doctorapp_esignature_doctorsignature"
             android:layout_marginTop="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:orientation="vertical">
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginBottom="12dp">
-
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
@@ -178,6 +179,13 @@
                         android:layout_margin="8dp"
                         />
 
+
+                    <ImageView
+                        android:id="@+id/iv_doctorapp__esignature_doctorsigntemplate"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:visibility="gone"/>
+
                     <com.github.gcacace.signaturepad.views.SignaturePad
                         android:id="@+id/b_doctorsign_template_signature_pad"
                         android:layout_width="match_parent"
@@ -185,25 +193,12 @@
                         app:penMinWidth="2dp"
                         app:penMaxWidth="2dp"
                         app:velocityFilterWeight="0.9"/>
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:orientation="vertical"
-                        android:gravity="bottom">
-                        <TextView
-                            android:text="X"
-                            android:textSize="32sp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:visibility="gone"/>
-
-                    </LinearLayout>
                 </RelativeLayout>
             </LinearLayout>
 
 
             <LinearLayout
+                android:id="@+id/ll_doctorapp_esignature_clearbutton"
                 android:paddingTop="16dp"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

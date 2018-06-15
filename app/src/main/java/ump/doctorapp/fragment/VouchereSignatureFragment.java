@@ -7,9 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.github.gcacace.signaturepad.views.SignaturePad;
+import com.orhanobut.hawk.Hawk;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -36,6 +39,9 @@ public class VouchereSignatureFragment extends BaseFragment {
 
     Button b_doctorsign_esignature_submit_button;
 
+    ImageView iv_doctorapp__esignature_doctorsigntemplate;
+    LinearLayout ll_doctorapp_esignature_clearbutton;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -50,6 +56,25 @@ public class VouchereSignatureFragment extends BaseFragment {
         b_doctorsign_esignature_clear_button = v.findViewById(R.id.b_doctorsign_esignature_clear_button);
         b_doctorsign_esignature_submit_button = v.findViewById(R.id.b_doctorsign_esignature_submit_button);
 
+        iv_doctorapp__esignature_doctorsigntemplate = v.findViewById(R.id.iv_doctorapp__esignature_doctorsigntemplate);
+        ll_doctorapp_esignature_clearbutton = v.findViewById(R.id.ll_doctorapp_esignature_clearbutton);
+
+        if(GlobalConstants.useDoctorSignTemplate){
+            doctorsignsStatus = true;
+            b_doctorsign_template_signature_pad.setVisibility(View.GONE);
+            ll_doctorapp_esignature_clearbutton.setVisibility(View.GONE);
+            iv_doctorapp__esignature_doctorsigntemplate.setVisibility(View.VISIBLE);
+
+            if(!(Hawk.get(GlobalConstants.doctorSignTemplateKey) == null)) {
+                iv_doctorapp__esignature_doctorsigntemplate.setImageBitmap(GlobalConstants.doctorSignTemplate);
+            }
+
+        }else {
+            b_doctorsign_template_signature_pad.setVisibility(View.VISIBLE);
+            ll_doctorapp_esignature_clearbutton.setVisibility(View.VISIBLE);
+            iv_doctorapp__esignature_doctorsigntemplate.setVisibility(View.GONE);
+
+        }
 
         b_patientsign_template_signature_pad.setOnSignedListener(new SignaturePad.OnSignedListener() {
             @Override
@@ -111,13 +136,21 @@ public class VouchereSignatureFragment extends BaseFragment {
         b_doctorsign_esignature_submit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 if(patientsignsStatus == true && doctorsignsStatus == true) {
 
                     GlobalConstants.eVoucherPatientSignatureTreeMap = new TreeMap<>();
                     GlobalConstants.eVoucherPatientSignatureTreeMap.put("0",b_patientsign_template_signature_pad.getTransparentSignatureBitmap());
 
                     GlobalConstants.eVoucherDoctorSignatureTreeMap = new TreeMap<>();
-                    GlobalConstants.eVoucherDoctorSignatureTreeMap.put("0",b_doctorsign_template_signature_pad.getTransparentSignatureBitmap());
+                    if(GlobalConstants.useDoctorSignTemplate){
+                        if(!(Hawk.get(GlobalConstants.doctorSignTemplateKey) == null)) {
+                            GlobalConstants.eVoucherDoctorSignatureTreeMap.put("0", GlobalConstants.doctorSignTemplate);
+                        }
+                    }else {
+                        GlobalConstants.eVoucherDoctorSignatureTreeMap.put("0", b_doctorsign_template_signature_pad.getTransparentSignatureBitmap());
+                    }
 
                     DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
                     Date date = new Date();

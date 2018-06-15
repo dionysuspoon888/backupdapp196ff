@@ -145,7 +145,7 @@ public class BaseActivity extends AppCompatActivity {
 
     //feature , load config to determine lang and set lang for all page.(ALL Activity requires it)
     @Override
-    protected void attachBaseContext(Context base) {
+    public void attachBaseContext(Context base) {
         super.attachBaseContext(LocaleManager.setLocale(base));
 
     }

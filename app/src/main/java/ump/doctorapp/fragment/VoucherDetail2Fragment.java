@@ -150,7 +150,7 @@ public class VoucherDetail2Fragment extends BaseFragment {
     public boolean addSignatureToGallery(Bitmap signature) {
         boolean result = false;
         try {
-            File photo = new File(getAlbumStorageDir("SignaturePad"), String.format("Signature_%d.jpg", System.currentTimeMillis()));
+            File photo = new File(getAlbumStorageDir("eVoucher"), String.format("eVoucher_%d.jpg", System.currentTimeMillis()));
             saveBitmap(signature, photo);
             scanMediaFile(photo);
             result = true;

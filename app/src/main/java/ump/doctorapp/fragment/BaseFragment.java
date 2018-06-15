@@ -32,6 +32,7 @@ import java.util.Map;
 
 import ump.doctorapp.R;
 import ump.doctorapp.model.GlobalConstants;
+import ump.doctorapp.util.LocaleManager;
 
 /**
  * Created by Dionysus.Poon on 8/6/2018.
@@ -48,6 +49,7 @@ public class BaseFragment extends Fragment {
         GlobalConstants.Location = TAG;
 
     }
+
 
 
 

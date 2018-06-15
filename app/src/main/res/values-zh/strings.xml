@@ -1,7 +1,7 @@
 <resources>
 
     <string name="app_name">UMP Doctor app</string>
-    <string name="ump_version_num">版本 : 1.0.0 Build 20180611</string>
+    <string name="ump_version_num">版本 : 1.0.2 Build 20180611</string>
     
     <string name="medical_scheme">\n醫療計劃</string>
     <string name="check_sum_data_not_match">服務端錯誤</string>
@@ -512,6 +512,7 @@
     <string name="doctorapp_esignature_esignature">電子簽署</string>
 
     <string name="doctorapp_esignature_patientsignaturetemplate">病人簽署模板</string>
+    <string name="doctorapp_esignature_patientsignahere">病人簽署</string>
 
     <!-- Upload -->
     <string name="doctorapp_menu_uploaddocumentphoto">上傳文檔照片</string>

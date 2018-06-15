@@ -82,6 +82,7 @@ public class SettingActivity extends BaseActivity {
 
     public TextView tv_membercard_toptitle;
 
+    public TextView tv_doctorapp_signmethod;
 
 
 
@@ -126,6 +127,7 @@ public class SettingActivity extends BaseActivity {
 
 
         ump_version_num = findViewById(R.id.ump_version_num);
+        tv_doctorapp_signmethod = findViewById(R.id.tv_doctorapp_signmethod);
 
         tv_language = findViewById(R.id.tv_language);
         tv_use_doctorsignature_template = findViewById(R.id.tv_use_doctorsignature_template);
@@ -279,7 +281,8 @@ public class SettingActivity extends BaseActivity {
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+               onBackPressed();
+
             }
         });
     }
@@ -399,6 +402,7 @@ public class SettingActivity extends BaseActivity {
             tv_use_doctorsignature_template.setText(R.string.doctorapp_doctor_use_doctorsignature_template);
             //b_setting_logout_real.setText(R.string.membercard_setting_logout_real);
             tv_membercard_toptitle.setText(R.string.doctorapp_setting_title);
+            tv_doctorapp_signmethod.setText(R.string.doctorapp_setting_useesignaturemethod);
         }catch (NullPointerException e){
             e.printStackTrace();
         }

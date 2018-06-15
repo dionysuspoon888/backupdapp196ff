@@ -11,7 +11,7 @@
 
 
     <string name="app_name">UMP Doctor app</string>
-    <string name="ump_version_num">Version : 1.0.0 Build 20180611</string>
+    <string name="ump_version_num">Version : 1.0.2 Build 20180611</string>
     <string name="access_code_example">hcsffu</string>
 
     <string name="access_code_medical">Medical</string>
