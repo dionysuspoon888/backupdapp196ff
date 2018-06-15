@@ -471,6 +471,10 @@
     <string name="doctorapp_signaturetemplate_title">醫生簽署模板</string>
     <string name="doctorapp_setting_title">設定</string>
 
+    <string name="doctorapp_uploaddocumentphoto_title">上傳文檔照片</string>
+
+    <string name="doctorapp_uploadphotohistory_title">上傳照片記錄</string>
+
     <!-- -->
     <string name="clinic_code">診所編號</string>
     <string name="doctor_code">醫生編號</string>
@@ -502,6 +506,52 @@
     <string name="doctorapp_scanss">醫療單據存入照片庫</string>
     <string name="doctorapp_scanff">無法存儲醫療單據</string>
     <string name="doctorapp_scanff2">無法將圖像寫入外部存儲器</string>
+
+    <string name="doctorapp_esignature_patientsignature">病人簽署</string>
+    <string name="doctorapp_esignature_doctorsignature">醫生簽署</string>
+    <string name="doctorapp_esignature_esignature">電子簽署</string>
+
+    <string name="doctorapp_esignature_patientsignaturetemplate">病人簽署模板</string>
+
+    <!-- Upload -->
+    <string name="doctorapp_menu_uploaddocumentphoto">上傳文檔照片</string>
+
+    <string name="doctorapp_documentphoto_uploaddocumentphoto">上傳文檔照片</string>
+
+    <string name="doctorapp_documentphoto_uploadphotohistory">上傳照片記錄</string>
+
+
+    <string name="doctorapp_photo_takephoto">拍照</string>
+
+    <string name="doctorapp_photo_chooseimagefile">選擇圖像文件</string>
+
+    <string name="doctorapp_photo_upload">上傳</string>
+
+    <string name="doctorapp_photo_showuploads">顯示上傳記錄</string>
+
+    <string name="doctorapp_photo_uploadss">上傳成功</string>
+
+    <string name="doctorapp_photo_nofileselected">未選擇任何文件</string>
+
+
+    <string name="doctorapp_photo_grantcamerapermission">請授予相機權限以拍照</string>
+
+
+    <string name="doctorapp_photohistory_tabtitle">上傳照片歷史</string>
+
+
+    <string name="doctorapp_photohistory_item_photoname">照片名稱:</string>
+    <string name="doctorapp_photohistory_item_uploaddate">上傳日期:</string>
+    <string name="doctorapp_photohistory_item_remark">備註:</string>
+
+    <string name="doctorapp_photohistory_item_photoname_detail">照片名稱</string>
+    <string name="doctorapp_photohistory_item_uploaddate_detail">上傳日期</string>
+    <string name="doctorapp_photohistory_item_remark_detail">備註</string>
+
+    <string name="doctorapp_photo_remark">輸入備註</string>
+
+    <string name="doctorapp_setting_useesignaturemethod">使用電子簽名方法</string>
+
 
 
 </resources>

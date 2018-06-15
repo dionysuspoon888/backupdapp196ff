@@ -42,7 +42,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
-                        android:text="Photo Name"
+                        android:text="@string/doctorapp_photohistory_item_photoname_detail"
                         android:textColor="@color/black" />
 
                     <TextView
@@ -77,7 +77,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
-                        android:text="Upload Date"
+                        android:text="@string/doctorapp_photohistory_item_uploaddate_detail"
                         android:textColor="@color/black" />
 
                     <TextView
@@ -112,7 +112,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
-                        android:text="Remark"
+                        android:text="@string/doctorapp_photohistory_item_remark_detail"
                         android:textColor="@color/black" />
 
                     <TextView

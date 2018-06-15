@@ -144,6 +144,11 @@ public class SettingActivity extends BaseActivity {
         rb_doctorapp_usedoctorsignaturetemplate_no.setButtonDrawable(new ColorDrawable(
                 Color.TRANSPARENT));
 
+        rb_doctorapp_signmethod1.setButtonDrawable(new ColorDrawable(
+                Color.TRANSPARENT));
+        rb_doctorapp_signmethod2.setButtonDrawable(new ColorDrawable(
+                Color.TRANSPARENT));
+
         resources = getResources();
 
 

@@ -59,7 +59,7 @@ public class VoucherDetail2Method2Fragment extends BaseFragment {
 
         iv_doctorapp_patientsignature.setImageBitmap(GlobalConstants.eVoucherPatientSignatureTreeMap.get("0"));
         iv_doctorapp_doctorsignature.setImageBitmap(GlobalConstants.eVoucherDoctorSignatureTreeMap.get("0"));
-       GlobalConstants.eVoucherMethod2SnapShot =  takeScreenShot(ll_evoucher_scan);
+
 
         b_evoucher_submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,7 +94,7 @@ public class VoucherDetail2Method2Fragment extends BaseFragment {
 //            Log.i("56123","I am in verifyStoragePermissions SS");
 //            Toast.makeText(getActivity(), "SSSSSSSSSSSSSSSSSSSSSS", Toast.LENGTH_SHORT).show();
 
-            if (addSignatureToGallery(GlobalConstants.eVoucherMethod2SnapShot)) {
+            if (addSignatureToGallery(takeScreenShot(ll_evoucher_scan))) {
 
                 String doctorapp_scanss = getString(R.string.doctorapp_scanss);
                 Toast.makeText(getActivity(), doctorapp_scanss, Toast.LENGTH_SHORT).show();

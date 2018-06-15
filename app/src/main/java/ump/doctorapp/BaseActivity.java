@@ -102,6 +102,22 @@ public class BaseActivity extends AppCompatActivity {
                 tv_membercard_toptitle.setText(R.string.doctorapp_setting_title);
                 break;
 
+            case "UploadDocumentPhotoActivity":
+                tv_membercard_toptitle.setText(R.string.doctorapp_uploaddocumentphoto_title);
+                break;
+
+            case "UploadPhotoActivity":
+                tv_membercard_toptitle.setText(R.string.doctorapp_uploaddocumentphoto_title);
+                break;
+
+            case "UploadPhotoHistoryActivity":
+                tv_membercard_toptitle.setText(R.string.doctorapp_uploadphotohistory_title);
+                break;
+
+            case "UploadPhotoDetailActivity":
+                tv_membercard_toptitle.setText(R.string.doctorapp_uploadphotohistory_title);
+                break;
+
             default:
                 tv_membercard_toptitle.setText("UMP DOCTOR APP");
                 break;

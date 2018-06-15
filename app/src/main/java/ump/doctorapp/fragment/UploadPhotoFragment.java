@@ -78,7 +78,7 @@ public class UploadPhotoFragment extends BaseFragment {
     public Uri imageUri;
     public Bitmap photoBitmap;
 
-     public String rounter = "";
+     public static String rounter = "";
 
      public  String imageFileNameText;
 
@@ -286,9 +286,19 @@ public class UploadPhotoFragment extends BaseFragment {
             String uploadDate =  dateFormat.format(date);
 
             GlobalConstants.UploadPhotoDataList.add(new UploadPhotoData(tmpbitmap,photoName,remark,uploadDate));
-            Toast.makeText(getActivity(), "Upload Successful", Toast.LENGTH_SHORT).show();
+
+            String tmpUploadSS = "doctorapp_photo_uploadss";
+            if(isAdded()){
+                tmpUploadSS = getString(R.string.doctorapp_photo_uploadss);
+            }
+            Toast.makeText(getActivity(), tmpUploadSS, Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(getActivity(), "No file selected", Toast.LENGTH_SHORT).show();
+
+            String tmpNoFileSelcted = "No file selected";
+            if(isAdded()){
+              tmpNoFileSelcted = getString(R.string.doctorapp_photo_nofileselected);
+            }
+            Toast.makeText(getActivity(), tmpNoFileSelcted, Toast.LENGTH_SHORT).show();
         }
     }
 

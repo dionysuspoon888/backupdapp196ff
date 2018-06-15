@@ -18,8 +18,8 @@
         android:padding="18dp">
 
     <TextView
-        android:text="Patient Signature Template"
-        android:textSize="26sp"
+        android:text="@string/doctorapp_esignature_patientsignaturetemplate"
+        android:textSize="22sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />
@@ -70,7 +70,7 @@
                     android:layout_alignParentBottom="true"
                     android:background="@android:color/darker_gray" />
                 <TextView
-                    android:text="Patient Signs here"
+                    android:text="@string/doctorapp_esignature_patientsignahere"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -121,7 +121,7 @@
 
         <TextView
             android:text="@string/doctorapp_main_doctorsigntemplate"
-            android:textSize="26sp"
+            android:textSize="22sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical|center_horizontal"

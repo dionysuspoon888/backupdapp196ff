@@ -75,7 +75,7 @@
                         android:layout_alignParentBottom="true"
                         android:background="@android:color/darker_gray" />
                     <TextView
-                        android:text="Patient Signature"
+                        android:text="@string/doctorapp_esignature_patientsignature"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
@@ -145,8 +145,8 @@
                 android:layout_height="40dp"
                 android:layout_toRightOf="@+id/clear_button"
                 android:background="@drawable/ump_normal_btn"
-                android:text="Scan"
-                />
+                android:text="@string/doctorapp_scan_evoucher" />
+
         </LinearLayout>
 
     </ScrollView>

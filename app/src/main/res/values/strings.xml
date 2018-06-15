@@ -525,6 +525,10 @@
     <string name="doctorapp_signaturetemplate_title">DOCTOR SIGNATURE\nTEMPLATE</string>
     <string name="doctorapp_setting_title">SETTING</string>
 
+    <string name="doctorapp_uploaddocumentphoto_title">UPLOAD DOCUMENT PHOTO</string>
+
+    <string name="doctorapp_uploadphotohistory_title">UPLOAD PHOTO HISTORY</string>
+
     <!-- -->
     <string name="clinic_code">Clinic Code</string>
     <string name="doctor_code">Doctor Code</string>
@@ -557,6 +561,50 @@
     <string name="doctorapp_scanss">Medical Voucher saved into the Gallery</string>
     <string name="doctorapp_scanff">Unable to store the Medical Voucher</string>
     <string name="doctorapp_scanff2">Cannot write images to external storage</string>
+
+    <string name="doctorapp_esignature_patientsignature">Patient Signature</string>
+    <string name="doctorapp_esignature_doctorsignature">Doctor Signature</string>
+    <string name="doctorapp_esignature_esignature">eSignature</string>
+    <string name="doctorapp_esignature_patientsignaturetemplate">Patient Signature Template</string>
+    <string name="doctorapp_esignature_patientsignahere">Patient Signs here</string>
+
+    <!-- Upload -->
+    <string name="doctorapp_menu_uploaddocumentphoto">Upload Document Photo</string>
+
+    <string name="doctorapp_documentphoto_uploaddocumentphoto">Upload Document Photo</string>
+    <string name="doctorapp_documentphoto_uploadphotohistory">Upload Photo History</string>
+
+    <string name="doctorapp_photo_takephoto">Take Photo</string>
+
+    <string name="doctorapp_photo_chooseimagefile">Choose Image file</string>
+
+    <string name="doctorapp_photo_upload">UPLOAD</string>
+
+    <string name="doctorapp_photo_showuploads">Show Uploads</string>
+
+
+    <string name="doctorapp_photo_uploadss">Upload Successful</string>
+
+    <string name="doctorapp_photo_nofileselected">No file selected</string>
+
+    <string name="doctorapp_photo_grantcamerapermission">Please grant Camera Permission for taking photo</string>
+
+    <string name="doctorapp_photohistory_tabtitle">Upload Photo History</string>
+
+    <string name="doctorapp_photohistory_item_photoname">Photo Name:</string>
+    <string name="doctorapp_photohistory_item_uploaddate">Upload Date:</string>
+    <string name="doctorapp_photohistory_item_remark">Remark:</string>
+
+    <string name="doctorapp_photohistory_item_photoname_detail">Photo Name</string>
+    <string name="doctorapp_photohistory_item_uploaddate_detail">Upload Date</string>
+    <string name="doctorapp_photohistory_item_remark_detail">Remark</string>
+
+    <string name="doctorapp_photo_remark">Enter Remark</string>
+
+    <string name="doctorapp_setting_useesignaturemethod">Use eSignature Method</string>
+
+
+
 
 
 

@@ -57,7 +57,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:maxLines="1"
-                    android:text="Photo Name:" />
+                    android:text="@string/doctorapp_photohistory_item_photoname" />
 
                 <TextView
                     android:id="@+id/tv_doctorapp_photo_name"
@@ -83,7 +83,7 @@
                     android:id="@+id/tv_doctorapp_photo_date_title"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Upload Date:"
+                    android:text="@string/doctorapp_photohistory_item_uploaddate"
                     android:visibility="visible"/>
 
                 <TextView
@@ -110,7 +110,7 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Remark:" />
+                    android:text="@string/doctorapp_photohistory_item_remark" />
 
                 <TextView
                     android:id="@+id/tv_doctorapp_photo_remark"

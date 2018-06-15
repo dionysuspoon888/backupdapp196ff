@@ -29,7 +29,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
-                android:text="Upload document photo"
+                android:text="@string/doctorapp_menu_uploaddocumentphoto"
                 android:background="@drawable/ump_normal_btn"
                 android:textColor="@color/white"
                 android:textSize="22sp" />

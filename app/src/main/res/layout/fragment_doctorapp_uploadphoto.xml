@@ -14,13 +14,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    <Button
-        android:id="@+id/b_doctorapp_takephoto"
-        android:layout_width="160dp"
-        android:layout_height="60dp"
-        android:text="Take Photo"
-        android:background="@drawable/ump_normal_btn"
-        />
+
+        <Button
+            android:id="@+id/b_doctorapp_takephoto"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:background="@drawable/ump_normal_btn"
+            android:text="@string/doctorapp_photo_takephoto" />
         <android.support.v4.widget.Space
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -29,7 +29,7 @@
         android:id="@+id/b_doctorapp_chooseimagefile"
         android:layout_width="160dp"
         android:layout_height="60dp"
-        android:text="Choose Image file"
+        android:text="@string/doctorapp_photo_chooseimagefile"
         android:background="@drawable/ump_normal_btn"/>
     </LinearLayout>
 
@@ -99,23 +99,24 @@
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/et_doctorapp_photo_remark"
                 style="@style/textview_black"
-                android:hint="Enter Remark"
-                android:maxLines="1"
-                android:scrollHorizontally="true"
-                android:drawablePadding="10dp"
-                android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/inputtext_access_code_text_back"
+                android:drawablePadding="10dp"
                 android:ellipsize="end"
-                android:maxLength="20"
+                android:hint="@string/doctorapp_photo_remark"
                 android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:paddingBottom="8dp"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
-                android:paddingBottom="8dp"
                 android:paddingTop="13dp"
-                android:layout_marginBottom="12dp"
-                />
+                android:scrollHorizontally="true" />
         </android.support.design.widget.TextInputLayout>
         <RelativeLayout
             android:layout_width="match_parent"
@@ -125,7 +126,7 @@
             android:id="@+id/b_doctorapp_photo_upload"
             android:layout_width="80dp"
             android:layout_height="45dp"
-            android:text="Upload"
+            android:text="@string/doctorapp_photo_upload"
             android:layout_centerHorizontal="true"
             android:background="@drawable/ump_normal_btn"/>
         <TextView
@@ -137,7 +138,7 @@
             android:layout_marginStart="25dp"
             android:layout_toEndOf="@+id/b_doctorapp_photo_upload"
             android:gravity="center"
-            android:text="Show Uploads"
+            android:text="@string/doctorapp_photo_showuploads"
             android:textSize="16sp" />
 
         </RelativeLayout>
