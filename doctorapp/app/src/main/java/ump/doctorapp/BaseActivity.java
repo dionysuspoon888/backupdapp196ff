@@ -15,6 +15,7 @@ import android.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Base64;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,7 @@ import android.widget.TextView;
 import com.orhanobut.hawk.Hawk;
 
 import java.io.ByteArrayOutputStream;
+import java.util.Locale;
 
 import ump.doctorapp.model.GlobalConstants;
 import ump.doctorapp.util.LocaleManager;
@@ -48,6 +50,17 @@ public class BaseActivity extends AppCompatActivity {
         Hawk.init(this).build();
         setContentView(R.layout.activity_doctorapp_main);
         getSupportActionBar().hide();
+
+        //Ensure Lang
+        Log.i("5699888","G.Lang is "+GlobalConstants.Lang);
+        Log.i("5699888","Sys.Lang is "+getResources().getConfiguration().locale.getLanguage().toString());
+        if(GlobalConstants.Lang.equals("en")){
+            LocaleManager.setNewLocale(this, Locale.ENGLISH);
+        }else if(GlobalConstants.Lang.equals("zh")){
+            LocaleManager.setNewLocale(this, Locale.CHINESE);
+        }
+        Log.i("5699888","Sys.Lang after is "+getResources().getConfiguration().locale.getLanguage().toString());
+
         tv_membercard_toptitle = findViewById(R.id.tv_membercard_toptitle);
         if(this.getClass() != null) {
             TAG = this.getClass().getSimpleName();
@@ -79,6 +92,15 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
+         //Ensure Lang
+        Log.i("5699888","G.Lang is "+GlobalConstants.Lang);
+        Log.i("5699888","Sys.Lang is "+getResources().getConfiguration().locale.getLanguage().toString());
+        if(GlobalConstants.Lang.equals("en")){
+            LocaleManager.setNewLocale(this, Locale.ENGLISH);
+        }else if(GlobalConstants.Lang.equals("zh")){
+            LocaleManager.setNewLocale(this, Locale.CHINESE);
+        }
+        Log.i("5699888","Sys.Lang after is "+getResources().getConfiguration().locale.getLanguage().toString());
 
         //dynamically set Title for different page
         //set after onCreate to ensure Fragment has already started and updated GlobalConstants.Location & for kill activity case
@@ -93,6 +115,15 @@ public class BaseActivity extends AppCompatActivity {
                 tv_membercard_toptitle.setText(R.string.doctorapp_medicalvoucher_title);
                 break;
             case "VoucherDetail2Activity":
+                tv_membercard_toptitle.setText(R.string.doctorapp_medicalvoucher_title);
+                break;
+            case "VoucherDetailMethod2Activity":
+                tv_membercard_toptitle.setText(R.string.doctorapp_medicalvoucher_title);
+                break;
+            case "VouchereSignatureActivity":
+                tv_membercard_toptitle.setText(R.string.doctorapp_esignature_title);
+                break;
+            case "VoucherDetail2Method2Activity":
                 tv_membercard_toptitle.setText(R.string.doctorapp_medicalvoucher_title);
                 break;
             case "DoctorSignTemplateActivity":

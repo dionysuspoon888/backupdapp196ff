@@ -1,7 +1,7 @@
 <resources>
 
     <string name="app_name">UMP Doctor app</string>
-    <string name="ump_version_num">版本 : 1.0.2 Build 20180611</string>
+    <string name="ump_version_num">版本 : 1.0.3 Build 20180619</string>
     
     <string name="medical_scheme">\n醫療計劃</string>
     <string name="check_sum_data_not_match">服務端錯誤</string>
@@ -470,6 +470,7 @@
     <string name="doctorapp_medicalvoucher_title">醫療單據</string>
     <string name="doctorapp_signaturetemplate_title">醫生簽署模板</string>
     <string name="doctorapp_setting_title">設定</string>
+    <string name="doctorapp_esignature_title">電子簽署</string>
 
     <string name="doctorapp_uploaddocumentphoto_title">上傳文檔照片</string>
 
@@ -538,7 +539,7 @@
     <string name="doctorapp_photo_grantcamerapermission">請授予相機權限以拍照</string>
 
 
-    <string name="doctorapp_photohistory_tabtitle">上傳照片歷史</string>
+    <string name="doctorapp_photohistory_tabtitle">上傳照片記錄</string>
 
 
     <string name="doctorapp_photohistory_item_photoname">照片名稱:</string>

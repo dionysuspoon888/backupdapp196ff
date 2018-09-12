@@ -195,6 +195,7 @@ public class SettingActivity extends BaseActivity {
 
 
         access_code_language_zh.setOnClickListener(v -> {
+            GlobalConstants.Lang  = "zh";
 
             if (!cur_language_zh) {
                 cur_language_zh = true;
@@ -203,6 +204,7 @@ public class SettingActivity extends BaseActivity {
         });
 
         access_code_language_en.setOnClickListener(v -> {
+            GlobalConstants.Lang  = "en";
 
             if (cur_language_zh) {
                 cur_language_zh = false;
@@ -251,6 +253,8 @@ public class SettingActivity extends BaseActivity {
 
                     Hawk.put(GlobalConstants.useeSignMethodKey, useSignatureMethod);
 
+                    GlobalConstants.eSignatureStatus = false;
+
                     setUseeSignatureMethod(useSignatureMethod);
 
 
@@ -261,6 +265,8 @@ public class SettingActivity extends BaseActivity {
             useSignatureMethod = false;
 
             Hawk.put(GlobalConstants.useeSignMethodKey, useSignatureMethod);
+
+            GlobalConstants.eSignatureStatus = false;
 
             setUseeSignatureMethod(useSignatureMethod);
 
@@ -345,12 +351,14 @@ public class SettingActivity extends BaseActivity {
         if (isChinese) {
             local = Locale.CHINESE;
         } else {
-            local = Locale.ENGLISH;
+
+           local = Locale.ENGLISH;
         }
 
         Context context = LocaleManager.setNewLocale(this, local);
         resources = context.getResources();
         refreshUI(isChinese);
+        Log.i("1999",resources.getConfiguration().locale.getLanguage().toString());
     }
 
     private void setShowTutorial(boolean isChinese) {
@@ -421,12 +429,12 @@ public class SettingActivity extends BaseActivity {
         ump_version_num.setText(R.string.ump_version_num);
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        startActivity(new Intent(this,MainActivity.class));
-        finish();
-    }
+//    @Override
+//    public void onBackPressed() {
+//        super.onBackPressed();
+//        startActivity(new Intent(this,MainActivity.class));
+//        finish();
+//    }
 
 
 }

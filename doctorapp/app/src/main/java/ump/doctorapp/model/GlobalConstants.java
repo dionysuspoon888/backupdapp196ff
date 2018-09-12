@@ -25,7 +25,7 @@ public class GlobalConstants {
 
     //Lang
     // zh = chinese, en = english
-    public static String Lang ;
+    public static String Lang = "";
     //Token   Access
     public static String TOKEN = "";
 

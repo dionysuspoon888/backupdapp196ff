@@ -11,7 +11,7 @@
 
 
     <string name="app_name">UMP Doctor app</string>
-    <string name="ump_version_num">Version : 1.0.2 Build 20180611</string>
+    <string name="ump_version_num">Version : 1.0.3 Build 20180619</string>
     <string name="access_code_example">hcsffu</string>
 
     <string name="access_code_medical">Medical</string>
@@ -524,6 +524,7 @@
     <string name="doctorapp_medicalvoucher_title">MEDICAL VOUCHER</string>
     <string name="doctorapp_signaturetemplate_title">DOCTOR SIGNATURE\nTEMPLATE</string>
     <string name="doctorapp_setting_title">SETTING</string>
+    <string name="doctorapp_esignature_title">eSIGNATURE</string>
 
     <string name="doctorapp_uploaddocumentphoto_title">UPLOAD DOCUMENT PHOTO</string>
 

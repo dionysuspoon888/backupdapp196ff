@@ -63,7 +63,7 @@ public class MainFragment  extends BaseFragment{
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), SettingActivity.class));
-                getActivity().finish();
+              //  getActivity().finish();
 
             }
         });
@@ -72,9 +72,22 @@ public class MainFragment  extends BaseFragment{
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        refreshUI();
+    }
+
+    @Override
     public void onBackPressed() {
         super.onBackPressed();
         startActivity(new Intent(getActivity(),LoginActivity.class));
         getActivity().finish();
+    }
+
+    public void refreshUI(){
+         b_doctorapp_main_uploadphoto.setText(R.string.doctorapp_menu_uploaddocumentphoto);
+         b_doctorapp_main_checkvoucher.setText(R.string.doctorapp_check_evoucher);
+         b_doctorapp_main_doctorsigntemplater.setText(R.string.doctorapp_main_doctorsigntemplate_text);
+         b_doctorapp_main_setting.setText(R.string.doctorapp_main_setting);
     }
 }
